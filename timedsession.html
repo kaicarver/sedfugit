@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--
+
+Initially from 
+http://jsbin.com/IgaXEVI/167/
+http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
+
+-->
+<html>
+<head>
+<title>Timed Session</title>
+<style>
+  .stopwatch, .session {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
+  }
+  .stopwatch span, .session span {
+    font-weight: bold;
+    display: block;
+  }
+  .stopwatch a, .session a {
+    padding-right: 5px;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<h2>Timed Session</h2>
+
+<p>Do each prescribed task, pressing "next" after every task.</p>
+ 
+<div class="session" id="a-session"></div>
+<div class="stopwatch" id="a-timer"></div>
+  
+<p><i>Work in progress: check console log for now</i></p>
+
+<p>First application is <a href="http://hundredpushups.com/week3.html">the hundred push ups training program</a>.
+Other possible applications: S1-S10 running program, NYT 7-minute workout, Tabata workouts, etc.</p>
+
+<script>
+var Session = function(elem, items, stopwatch) {
+
+  var sequence = createSequence(elem, items),
+      startButton  = createButton("start", start),
+      nextButton   = createButton("next", next),
+      resetButton  = createButton("reset", reset),
+      counter;
+
+  // append elements
+  elem.appendChild(startButton);
+  elem.appendChild(nextButton);
+  elem.appendChild(resetButton);
+
+  // initialize
+  reset();
+
+  // private functions
+  function createSequence(elem, items) {
+    for (var i=0, len=items.length; i < len; i++) {			         elem.appendChild(createItem(items[i]));
+    }
+  }
+  function createItem(item) {
+    var d = document.createElement("div");
+    d.innerHTML = item;
+    return d;
+  }
+  function createButton(action, handler) {
+    var a = document.createElement("a");
+    a.href = "#" + action;
+    a.innerHTML = action;
+    a.addEventListener("click", function(event) {
+      handler();
+      event.preventDefault();
+    });
+    return a;
+  }
+  function start() {
+    stopwatch.start();
+  }
+  function next() {
+    stopwatch.lap();
+    counter++;
+  }
+  function reset() {
+    stopwatch.stop();
+    stopwatch.reset();
+    counter = 0;
+  }
+
+  // public API
+  this.next  = next;
+  this.reset = reset;
+};
+
+var Stopwatch = function(elem, options) {
+  
+  var timer       = createTimer(),
+      startButton = createButton("start", start),
+      stopButton  = createButton("stop", stop),
+      resetButton = createButton("reset", reset),
+      lapButton   = createButton("lap", lap),
+      offset,
+      clock,
+      interval;
+  
+  // default options
+  options = options || {};
+  options.delay = options.delay || 1;
+ 
+  // append elements     
+  elem.appendChild(timer);
+  elem.appendChild(startButton);
+  elem.appendChild(stopButton);
+  elem.appendChild(resetButton);
+  elem.appendChild(lapButton);
+  
+  // initialize
+  reset();
+  
+  // private functions
+  function createTimer() {
+    return document.createElement("span");
+  }
+  
+  function createButton(action, handler) {
+    var a = document.createElement("a");
+    a.href = "#" + action;
+    a.innerHTML = action;
+    a.addEventListener("click", function(event) {
+      handler();
+      event.preventDefault();
+    });
+    return a;
+  }
+  
+  function start() {
+    if (!interval) {
+      offset   = Date.now();
+      interval = setInterval(update, options.delay);
+    }
+  }
+  
+  function stop() {
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
+  }
+  
+  function reset() {
+    clock = 0;
+    render(0);
+  }
+  
+  function lap() {
+    // should record the elapsed time
+    console.log("lap: ", clock);
+  }
+  
+  function update() {
+    clock += delta();
+    render();
+  }
+  
+  function render() {
+    timer.innerHTML = clock/1000; 
+  }
+  
+  function delta() {
+    var now = Date.now(),
+        d   = now - offset;
+    
+    offset = now;
+    return d;
+  }
+  
+  // public API
+  this.start  = start;
+  this.stop   = stop;
+  this.reset  = reset;
+  this.lap    = lap;
+};
+
+var setList = [
+  "do 20 pushups",
+  "rest 60 seconds",
+  "do 25 pushups",
+  "rest 60 seconds",
+  "do 15 pushups",
+  "rest 60 seconds",
+  "do 15 pushups",
+  "rest 60 seconds",
+  "do max pushups (at least 25)"
+];
+var a = document.getElementById("a-timer");
+var aStopwatch = new Stopwatch(a, {delay: 100});
+
+var s = document.getElementById("a-session");
+var aSession = new Session(s, setList, aStopwatch);
+
+</script>
+</body>
+</html>
