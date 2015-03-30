@@ -37,19 +37,26 @@ http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-java
   
 <p><i>Work in progress: check console log for now</i></p>
 
-<p>First application is <a href="http://hundredpushups.com/week3.html">the hundred push ups training program</a>.
+<p>First application is <a href="http://hundredpushups.com/week3.html" target="_blank">the hundred push ups training program</a>.
 Other possible applications: S1-S10 running program, NYT 7-minute workout, Tabata workouts, etc.</p>
 
-<script>
-var Session = function(elem, items, stopwatch) {
+<p>Recording workouts: I currently use <a href="http://www.pushupslogger.com/plog/overview" target="_blank">pushups logger</a>.
 
-  var sequence = createSequence(elem, items),
+<script>
+function getElementByXpath (path) {
+  return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
+
+var Session = function(elem, sets, stopwatch) {
+
+  var sequence = createSequence(elem, sets),
       startButton  = createButton("start", start),
       nextButton   = createButton("next", next),
       resetButton  = createButton("reset", reset),
       counter;
 
   // append elements
+  elem.appendChild(sequence);
   elem.appendChild(startButton);
   elem.appendChild(nextButton);
   elem.appendChild(resetButton);
@@ -58,13 +65,16 @@ var Session = function(elem, items, stopwatch) {
   reset();
 
   // private functions
-  function createSequence(elem, items) {
-    for (var i=0, len=items.length; i < len; i++) {			         elem.appendChild(createItem(items[i]));
+  function createSequence(elem, sets) {
+    var sequence = document.createElement("div");
+    for (var i=0, len=sets.length; i < len; i++) {
+      sequence.appendChild(createSet(sets[i]));
     }
+    return sequence;
   }
-  function createItem(item) {
+  function createSet(set) {
     var d = document.createElement("div");
-    d.innerHTML = item;
+    d.innerHTML = set;
     return d;
   }
   function createButton(action, handler) {
@@ -82,12 +92,19 @@ var Session = function(elem, items, stopwatch) {
   }
   function next() {
     stopwatch.lap();
+    select(counter);
     counter++;
   }
   function reset() {
     stopwatch.stop();
     stopwatch.reset();
-    counter = 0;
+    counter = 1;
+  }
+  function select(index) {
+    // this is kinda ugly for now
+    var xpath = '//*[@id="a-session"]/div/div['+counter+']';
+    var e = getElementByXpath(xpath);
+    e.style.backgroundColor='yellow';
   }
 
   // public API
@@ -184,16 +201,29 @@ var Stopwatch = function(elem, options) {
   this.lap    = lap;
 };
 
+// week 3 day 2
 var setList = [
   "do 20 pushups",
-  "rest 60 seconds",
+  "rest 90 seconds",
   "do 25 pushups",
-  "rest 60 seconds",
+  "rest 90 seconds",
   "do 15 pushups",
-  "rest 60 seconds",
+  "rest 90 seconds",
   "do 15 pushups",
-  "rest 60 seconds",
+  "rest 90 seconds",
   "do max pushups (at least 25)"
+];
+// week 3 day 3
+setList = [
+  "do 22 pushups",
+  "rest 120 seconds",
+  "do 30 pushups",
+  "rest 120 seconds",
+  "do 20 pushups",
+  "rest 120 seconds",
+  "do 20 pushups",
+  "rest 120 seconds",
+  "do max pushups (at least 28)"
 ];
 var a = document.getElementById("a-timer");
 var aStopwatch = new Stopwatch(a, {delay: 100});
