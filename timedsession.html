@@ -33,7 +33,8 @@ http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-java
 <p>Do each prescribed task, pressing "next" after every task.</p>
  
 <div class="session" id="a-session"></div>
-<div class="stopwatch" id="a-timer"></div>
+<div class="stopwatch" id="tot-timer"></div>
+<div class="stopwatch" id="rel-timer"></div>
   
 <p><i>Work in progress: check console log for now</i></p>
 
@@ -51,7 +52,7 @@ var myOnload = function() {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
   }
 
-  var Session = function(elem, sets, stopwatch) {
+  var Session = function(elem, sets, totStopwatch, relStopwatch) {
 
     var sequence = createSequence(elem, sets),	
       startButton  = createButton("start", start),
@@ -95,20 +96,32 @@ var myOnload = function() {
       return a;
     }
     function start() {
-      stopwatch.start();
+      totStopwatch.start();
+      next();
     }
     function next() {
-      stopwatch.lap();
+      relStopwatch.stop();
+      totStopwatch.lap();
+      relStopwatch.lap();
+      relStopwatch.reset();
+      relStopwatch.start();
       select(counter);
       counter++;
     }
     function reset() {
-      stopwatch.stop();
-      stopwatch.reset();
+      totStopwatch.stop();
+      totStopwatch.reset();
+      relStopwatch.stop();
+      relStopwatch.reset();
       counter = 1;
     }
     function select(index) {
       // this is kinda ugly for now
+      for (var i=1; i<=sets.length; i++) { 
+        var xpath = '//*[@id="a-session"]/div/div['+i+']';
+        var e = getElementByXpath(xpath);
+	e.style.backgroundColor='white';
+      }
       var xpath = '//*[@id="a-session"]/div/div['+counter+']';
       var e = getElementByXpath(xpath);
       e.style.backgroundColor='yellow';
@@ -235,13 +248,13 @@ var myOnload = function() {
     "rest 120 seconds",
     "do max pushups (at least 28)"
   ];
-  var w = document.getElementById("a-timer");
-  var aStopwatch = new Stopwatch(w, {delay: 100});
-  aStopwatch = new Stopwatch(w, {delay: 100});
+  var tot = document.getElementById("tot-timer");
+  var totStopwatch = new Stopwatch(tot, {delay: 100});
+  var rel = document.getElementById("rel-timer");
+  var relStopwatch = new Stopwatch(rel, {delay: 100});
 
   var s = document.getElementById("a-session");
-  var aSession = new Session(s, setList, aStopwatch);
-  aSession = new Session(s, setList, aStopwatch);
+  var aSession = new Session(s, setList, totStopwatch, relStopwatch);
 }
 
 // Install onload function in an unobtrusive way
