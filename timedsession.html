@@ -59,6 +59,9 @@ var myOnload = function() {
       resetButton  = createButton("reset", reset),
       counter;
 
+    // clear the element just in case
+    elem.innerHTML = "";
+
     // append elements
     elem.appendChild(sequence);
     elem.appendChild(startButton);
@@ -131,7 +134,10 @@ var myOnload = function() {
     options = options || {};
     options.delay = options.delay || 1;
 
-    // append elements     
+    // clear the element just in case
+    elem.innerHTML = "";
+
+    // append elements
     elem.appendChild(timer);
     elem.appendChild(startButton);
     elem.appendChild(stopButton);
@@ -229,11 +235,13 @@ var myOnload = function() {
     "rest 120 seconds",
     "do max pushups (at least 28)"
   ];
-  var a = document.getElementById("a-timer");
-  var aStopwatch = new Stopwatch(a, {delay: 100});
+  var w = document.getElementById("a-timer");
+  var aStopwatch = new Stopwatch(w, {delay: 100});
+  aStopwatch = new Stopwatch(w, {delay: 100});
 
   var s = document.getElementById("a-session");
   var aSession = new Session(s, setList, aStopwatch);
+  aSession = new Session(s, setList, aStopwatch);
 }
 
 // Install onload function in an unobtrusive way
