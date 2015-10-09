@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <!--
-
-Initially from 
-http://jsbin.com/IgaXEVI/167/
-http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
-
+Initially from http://jsbin.com/IgaXEVI/167/ http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
 -->
-<meta name="robots" content="noindex">
 <html>
 <head>
 <meta charset=utf-8 />
 <title>Stopwatch Test</title>
+<script src="stopwatch.js"></script>
+</head>
+<body>
+<h2>Super basic</h2>
+  
+<div id="stepUI"></div>
+<div><button onclick="nextStep(this)">Go</button></div>
+<div>Total <span id="total"></span> seconds</div>
+
+<script>
+  var stepData = [
+    "do 14 pushups",
+    "rest 90 seconds",
+    "do 19 pushups",
+    "rest 90 seconds",
+    "do 14 pushups",
+    "rest 90 seconds",
+    "do 14 pushups",
+    "rest 90 seconds",
+    "do at least 19 pushups",
+  ];
+  var elems = document.getElementsByClassName("basic");
+  var stepUI = document.getElementById("stepUI");
+  for (var i = 0; i < stepData.length; i++) {
+    stepUI.innerHTML += '<div id="step' + i + '">' + stepData[i] + ' </div>';
+  }
+  var curStep = -1;
+  function nextStep(button) {
+    if (curStep < stepData.length) {
+      if (curStep >= 0) {
+	document.getElementById("step" + curStep).stopwatch.stop();
+      } else {
+	button.innerText = "Next";
+      }
+      curStep++;
+      if (curStep < stepData.length) {
+	new Stopwatch(document.getElementById("step" + curStep)).start();
+      }
+      if (curStep == stepData.length - 1) {
+	button.innerText = "Done";
+      }
+    }
+  }
+  function totalTime() {
+    var total = 0;
+    for (var i = 0; i < stepData.length; i++) {
+      var step = document.getElementById('step' + i);
+      if (step && step.stopwatch) {
+	total += step.stopwatch.time();
+      }
+    }
+    document.getElementById("total").innerText = total;
+  }
+  setInterval(totalTime, 100);
+</script>
+
+<hr>
 <style>
   .stopwatch {
     display: inline-block;
@@ -28,8 +80,6 @@ http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-java
     text-decoration: none;
   }
 </style>
-</head>
-<body>
 <h2>Basic example; update every 1 ms</h2>
   
 <p>click <code>start</code> to start a stopwatch</p>
@@ -38,7 +88,7 @@ http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-java
 var elems = document.getElementsByClassName("basic");
   
 for (var i=0, len=elems.length; i&lt;len; i++) {
-  new Stopwatch(elems[i]);
+  new Stopwatch2(elems[i]);
 }
 </pre>
 <div class="basic stopwatch"></div>
@@ -51,34 +101,34 @@ for (var i=0, len=elems.length; i&lt;len; i++) {
 
 <pre>
 var a = document.getElementById("a-timer");
-aTimer = new Stopwatch(a);
+aTimer = new Stopwatch2(a);
 aTimer.start();
 </pre>
 <div class="stopwatch" id="a-timer"></div>1 ms<br>
   
 <pre>
 var b = document.getElementById("b-timer");
-bTimer = new Stopwatch(b, {delay: 100});
+bTimer = new Stopwatch2(b, {delay: 100});
 bTimer.start();
 </pre>
 <div class="stopwatch" id="b-timer"></div>100 ms<br>
 
 <pre>
 var c = document.getElementById("c-timer");
-cTimer = new Stopwatch(c, {delay: 456});
+cTimer = new Stopwatch2(c, {delay: 456});
 cTimer.start();
 </pre>
 <div class="stopwatch" id="c-timer"></div>456 ms<br>
   
 <pre>
 var d = document.getElementById("d-timer");
-dTimer = new Stopwatch(d, {delay: 1000});
+dTimer = new Stopwatch2(d, {delay: 1000});
 dTimer.start();
 </pre>
 <div class="stopwatch" id="d-timer"></div>1000 ms<br>
   
-<script id="jsbin-javascript">
-var Stopwatch = function(elem, options) {
+<script>
+var Stopwatch2 = function(elem, options) {
   
   var timer       = createTimer(),
       startButton = createButton("start", start),
@@ -164,25 +214,25 @@ var Stopwatch = function(elem, options) {
 var elems = document.getElementsByClassName("basic");
 
 for (var i=0, len=elems.length; i<len; i++) {
-  new Stopwatch(elems[i]);
+  new Stopwatch2(elems[i]);
 }
 
 
 // programmatic examples
 var a = document.getElementById("a-timer");
-aTimer = new Stopwatch(a);
+aTimer = new Stopwatch2(a);
 aTimer.start();
 
 var b = document.getElementById("b-timer");
-bTimer = new Stopwatch(b, {delay: 100});
+bTimer = new Stopwatch2(b, {delay: 100});
 bTimer.start();
 
 var c = document.getElementById("c-timer");
-cTimer = new Stopwatch(c, {delay: 456});
+cTimer = new Stopwatch2(c, {delay: 456});
 cTimer.start();
 
 var d = document.getElementById("d-timer");
-dTimer = new Stopwatch(d, {delay: 1000});
+dTimer = new Stopwatch2(d, {delay: 1000});
 dTimer.start();
 </script>
 </body>
