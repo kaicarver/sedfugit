@@ -11,10 +11,14 @@ var Stopwatch = function(elem, options) {
   function createTimer() { return document.createElement("span"); }
   function start()  { if (!interval) { offset = Date.now(); interval = setInterval(update, options.delay); } }
   function stop()   { if (interval)  { clearInterval(interval); interval = null; } }
-  function reset()  { clock = 0; render(); }
+  function reset()  { clock = 0; updateDisplay(); }
   var rest_re = /rest (\d+) seconds/;
-  function update() { clock += delta(); render(); }
-  function render() { var maxrest = elem.innerText.match(rest_re); var overdue = maxrest && maxrest[1] < time(); timer.innerHTML = (overdue ? '<span style="color: red">' : "<span>") + time() + "</span>"; }
+  var push_re = /(\d+) pushup/;
+  function update() { clock += delta(); updateDisplay(); }
+  function updateDisplay() { timer.innerHTML = render(); }
+  function render() { var maxrest = elem.innerText.match(rest_re); var overdue = maxrest && maxrest[1] < time();
+		      return (overdue ? '<span style="color: red">' : "<span>") + time() + "</span>"; }
+  function pushups(){ var pushups = elem.innerText.match(push_re); return (pushups ? pushups[1] : 0); }
   function delta()  { var now = Date.now(), d = now - offset; offset = now; return d; }
   function time()   { return Math.round(clock/1000); }
   
@@ -22,4 +26,6 @@ var Stopwatch = function(elem, options) {
   this.stop   = stop;
   this.reset  = reset;
   this.time   = time;
+  this.render = render;
+  this.pushups= pushups;
 };

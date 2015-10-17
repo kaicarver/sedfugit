@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Pushups Test</title>
+<script src="stopwatch.js"></script>
+<style>
+  /* general 4-corner and center areas positioning */
+  .area {
+    position:absolute;
+    margin:0;
+    padding:5px;
+  }
+  .area:nth-child(1) {
+      top:0;
+      left:0;    
+  }
+  .area:nth-child(2) {
+      top:0;
+      right:0;
+  }
+  .area:nth-child(3) {
+      bottom:0;
+      left:0;
+  }
+  .area:nth-child(4) {
+      bottom:0;
+      right:0;
+  }
+  .area:nth-child(5) {
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+  }
+  /* specific styles */
+  body { font-family: Arial; }
+  #mainUI {
+      text-align: center;
+  }
+  #mainUI button {
+      min-width: 14em;
+      xmin-height: 10em;
+  }
+  #mainUI #todo {
+      font-size: 2.5em;
+  }
+  #mainUI #stepTime {
+      font-size: 10em;
+      margin-top: -0.15em;
+      margin-bottom: -0.1em;
+  }
+  input, select, button {
+    font-family: inherit;
+    font-size: inherit;
+  }
+</style>
+</head>
+<body>
+  <div class="area">
+    <div id="stepUI"></div>
+  </div>
+  <div class="area"></div>
+  <div class="area">
+    Total<br/>
+    <span id="totalTime"></span> seconds<br/>
+    <span id="totalPushups"></span> pushups
+  </div>
+  <div class="area"></div>
+  <div class="area">
+    <div id="mainUI">
+      <button onmousedown="setTimeout(nextStep, 500)">
+	<div id="todo"></div>
+	<div id="stepTime"></div>
+      </button>
+    </div>
+  </div>
+  <script>
+    var pushupSetData = [
+      [
+	"do 14 pushups",
+	"rest 90 seconds",
+	"do 19 pushups",
+	"rest 90 seconds",
+	"do 14 pushups",
+	"rest 90 seconds",
+	"do 14 pushups",
+	"rest 90 seconds",
+	"do at least 19 pushups",
+      ],
+      [
+	"do 16 pushups",
+	"rest 120 seconds",
+	"do 21 pushups",
+	"rest 120 seconds",
+	"do 15 pushups",
+	"rest 120 seconds",
+	"do 15 pushups",
+	"rest 120 seconds",
+	"do at least 21 pushups",
+      ],      
+    ];
+    var pushupSet = pushupSetData[1];
+    var elems = document.getElementsByClassName("basic");
+    var stepUI = document.getElementById("stepUI");
+    for (var i = 0; i < pushupSet.length; i++) {
+      stepUI.innerHTML += '<div id="step' + i + '">' + pushupSet[i] + ' </div>';
+    }
+    var curStep = -1;
+    function nextStep() {
+      var todo = document.getElementById("todo");
+      if (curStep < pushupSet.length) {
+	if (curStep >= 0) {
+	  document.getElementById("step" + curStep).stopwatch.stop();
+	}
+	curStep++;
+	if (curStep < pushupSet.length) {
+	  todo.innerText = document.getElementById("step" + curStep).innerText;
+	  new Stopwatch(document.getElementById("step" + curStep)).start();
+	}
+	if (curStep > pushupSet.length - 1) {
+	  todo.innerText = "";
+	}
+      }
+    }
+    function totalTime() {
+      var totalTime = 0;
+      var totalPushups = 0;
+      for (var i = 0; i < pushupSet.length; i++) {
+	var prevStep = document.getElementById('step' + (i-1));
+	var step = document.getElementById('step' + i);
+	if (step && step.stopwatch) {
+	  totalTime += step.stopwatch.time();
+	  // only add pushups when step has been done
+	  if (prevStep && prevStep.stopwatch) {
+	    totalPushups += 1 * prevStep.stopwatch.pushups();
+	  }
+	}
+      }
+      if (curStep >= pushupSet.length) {
+	// last step was done
+	if (step && step.stopwatch) {
+	  totalPushups += 1 * step.stopwatch.pushups();
+	}
+      }
+      document.getElementById("totalTime").innerText = totalTime;
+      document.getElementById("totalPushups").innerText = totalPushups;
+    }
+    function stepTime() {
+      var stepTime = curStep <= 0 ? "Go" : "Done";
+      var step = document.getElementById('step' + curStep);
+      if (step && step.stopwatch) {
+	stepTime = step.stopwatch.render();
+      }
+      document.getElementById("stepTime").innerHTML = stepTime;
+    }
+    setInterval(totalTime, 100);   
+    setInterval(stepTime, 100);
+</script>
+</body>
+</html>
