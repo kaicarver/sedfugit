@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
+<meta charset="utf-8"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <title>Pushups Test</title>
 <script src="stopwatch.js"></script>
 <style>
@@ -53,6 +55,9 @@
     font-family: inherit;
     font-size: inherit;
   }
+  #workoutTitle {
+      font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -62,87 +67,97 @@
   <div class="area"></div>
   <div class="area">
     Total<br/>
-    <span id="totalTime"></span> seconds<br/>
-    <span id="totalPushups"></span> pushups
+    <span id="curTotalTime"></span> seconds<br/>
+    <span id="curTotalPushups"></span> / <span id="totalPushups"></span> pushups
   </div>
-  <div class="area"></div>
+  <div class="area">
+    <div class="link"><a href="http://www.hundredpushups.com" target="_blank">pushups site</a></div>
+    <div class="link" id="fork"><a href="https://github.com/kaicarver/sedfugit/">fork me on Github!</a></div>
+  </div>
   <div class="area">
     <div id="mainUI">
-      <button onmousedown="setTimeout(nextStep, 500)">
+      <button onmousedown="nextStep()">
 	<div id="todo"></div>
 	<div id="stepTime"></div>
       </button>
     </div>
   </div>
   <script>
-    var pushupSetData = [
-      [
-	"do 14 pushups",
-	"rest 90 seconds",
-	"do 19 pushups",
-	"rest 90 seconds",
-	"do 14 pushups",
-	"rest 90 seconds",
-	"do 14 pushups",
-	"rest 90 seconds",
-	"do at least 19 pushups",
-      ],
-      [
-	"do 16 pushups",
-	"rest 120 seconds",
-	"do 21 pushups",
-	"rest 120 seconds",
-	"do 15 pushups",
-	"rest 120 seconds",
-	"do 15 pushups",
-	"rest 120 seconds",
-	"do at least 21 pushups",
-      ],      
+    var pushupData = [
+      { "week" : 3, "day" : 1, "col" : 2, "sets" : [12,17,13,13,17], "rest" : 60 },
+      { "week" : 3, "day" : 2, "col" : 2, "sets" : [14,19,14,14,19], "rest" : 90 },
+      { "week" : 3, "day" : 3, "col" : 2, "sets" : [16,21,15,15,21], "rest" : 120 },
+      { "week" : 4, "day" : 1, "col" : 2, "sets" : [18,22,16,16,25], "rest" : 60 },
+      { "week" : 4, "day" : 2, "col" : 2, "sets" : [20,25,20,20,28], "rest" : 90 }
+      //{ "week" : 4, "day" : 3, "col" : 2, "sets" : [23,26,23,23,33], "rest" : 120 }
     ];
-    var pushupSet = pushupSetData[1];
+    for (var j = 0; j < pushupData.length; j++) {
+      var sets = pushupData[j].sets;
+      var rest = pushupData[j].rest;
+      var textSets = [];
+      for (var i = 0; i < sets.length; i++) {
+	if (i > 0) textSets.push("rest " + rest + " seconds");
+	var extra = (i == sets.length - 1) ? "at least " : "";
+	textSets.push("do " + extra + sets[i] + " pushups");
+      }
+      pushupData[j].textSets = textSets;
+    }
+    var pushupSet = pushupData[pushupData.length - 1];
     var elems = document.getElementsByClassName("basic");
     var stepUI = document.getElementById("stepUI");
-    for (var i = 0; i < pushupSet.length; i++) {
-      stepUI.innerHTML += '<div id="step' + i + '">' + pushupSet[i] + ' </div>';
+    stepUI.innerHTML += '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + pushupSet.week +
+      '.html" target="_blank">week '+ pushupSet.week + '</a>' +
+      ' day ' + pushupSet.day + ' level ' + pushupSet.col + '</div>';
+    for (var i = 0; i < pushupSet.textSets.length; i++) {
+      stepUI.innerHTML += '<div id="step' + i + '">' + pushupSet.textSets[i] + ' </div>';
+    }
+    for (var i = 0; i < pushupSet.textSets.length; i++) {
+      new Stopwatch(document.getElementById("step" + i));
     }
     var curStep = -1;
     function nextStep() {
       var todo = document.getElementById("todo");
-      if (curStep < pushupSet.length) {
+      if (curStep < pushupSet.textSets.length) {
 	if (curStep >= 0) {
 	  document.getElementById("step" + curStep).stopwatch.stop();
 	}
 	curStep++;
-	if (curStep < pushupSet.length) {
-	  todo.innerText = document.getElementById("step" + curStep).innerText;
-	  new Stopwatch(document.getElementById("step" + curStep)).start();
+	if (curStep < pushupSet.textSets.length) {
+	  var s = document.getElementById("step" + curStep);
+	  todo.innerText = s.innerText;
+	  s.style.backgroundColor = "pink";
+	  //new Stopwatch(s).start();
+	  s.stopwatch.start();
 	}
-	if (curStep > pushupSet.length - 1) {
+	if (curStep > pushupSet.textSets.length - 1) {
 	  todo.innerText = "";
 	}
       }
     }
     function totalTime() {
-      var totalTime = 0;
+      var curTotalTime = 0;
+      var curTotalPushups = 0;
       var totalPushups = 0;
-      for (var i = 0; i < pushupSet.length; i++) {
+      for (var i = 0; i < pushupSet.textSets.length; i++) {
 	var prevStep = document.getElementById('step' + (i-1));
 	var step = document.getElementById('step' + i);
 	if (step && step.stopwatch) {
-	  totalTime += step.stopwatch.time();
+	  curTotalTime += step.stopwatch.time();
 	  // only add pushups when step has been done
-	  if (prevStep && prevStep.stopwatch) {
-	    totalPushups += 1 * prevStep.stopwatch.pushups();
+	  if (prevStep && prevStep.stopwatch.time() > 0 && !prevStep.stopwatch.running() ) {
+	    curTotalPushups += 1 * prevStep.stopwatch.pushups();
 	  }
-	}
-      }
-      if (curStep >= pushupSet.length) {
-	// last step was done
-	if (step && step.stopwatch) {
 	  totalPushups += 1 * step.stopwatch.pushups();
 	}
       }
-      document.getElementById("totalTime").innerText = totalTime;
+      if (curStep >= pushupSet.textSets.length) {
+	// last step was done
+	if (step && step.stopwatch) {
+	  curTotalPushups += 1 * step.stopwatch.pushups();
+	}
+      }
+      document.getElementById("curTotalTime").innerText = curTotalTime;
+      document.getElementById("curTotalPushups").innerText = curTotalPushups;
       document.getElementById("totalPushups").innerText = totalPushups;
     }
     function stepTime() {
