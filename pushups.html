@@ -102,7 +102,29 @@
       }
       pushupData[j].textSets = textSets;
     }
-    var pushupSet = pushupData[pushupData.length - 1];
+    //var pushupSet = pushupData[pushupData.length - 1];
+    /*
+
+Past exercises, to be stored at some point:
+
+Wed Nov  4 18:02:37 CST 2015
+week 3 day 1 level 2
+do 12 pushups 24
+rest 60 seconds 59
+do 17 pushups 34
+rest 60 seconds 59
+do 13 pushups 30
+rest 60 seconds 65
+do 13 pushups 29
+rest 60 seconds 63
+do at least 17 pushups 53
+Total
+416 seconds
+72 / 72 pushups
+Note: should have been easy restarting at week 3. It was not super easy towards the end -- barely could do the last set, with a tiny bit of pausing. Still, it's nice to be able to do a full set without totally dying and failing to do it properly. Something to be said for maxxing ou only at the end, not already at the 3d or 4th set.
+
+      */
+    var pushupSet = pushupData[1];
     var elems = document.getElementsByClassName("basic");
     var stepUI = document.getElementById("stepUI");
     stepUI.innerHTML += '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + pushupSet.week +
