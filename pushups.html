@@ -83,6 +83,9 @@
     </div>
   </div>
   <script>
+    window.onload = function() {
+      var snd = new Audio("C5.mp3");
+    }
     var pushupData = [
       { "week" : 3, "day" : 1, "col" : 2, "sets" : [12,17,13,13,17], "rest" : 60 },
       { "week" : 3, "day" : 2, "col" : 2, "sets" : [14,19,14,14,19], "rest" : 90 },
@@ -123,8 +126,55 @@ Total
 72 / 72 pushups
 Note: should have been easy restarting at week 3. It was not super easy towards the end -- barely could do the last set, with a tiny bit of pausing. Still, it's nice to be able to do a full set without totally dying and failing to do it properly. Something to be said for maxxing ou only at the end, not already at the 3d or 4th set.
 
-      */
-    var pushupSet = pushupData[1];
+Sun Nov 8 11 am
+week 3 day 2 level 2
+do 14 pushups 25
+rest 90 seconds 105
+do 19 pushups 33
+rest 90 seconds 89
+do 14 pushups 25
+rest 90 seconds 90
+do 14 pushups 22
+rest 90 seconds 101
+do at least 19 pushups 43
+Total
+533 seconds
+80 / 80 pushups +6
+Note: did 25 in last set. First time in a long time I can do a full set without trouble. Yay!
+
+Thu Nov 19 12:15:58 CST 2015
+week 3 day 3 level 2
+do 16 pushups 29
+rest 120 seconds 121
+do 21 pushups 35
+rest 120 seconds 109
+do 15 pushups 21
+rest 120 seconds 148
+do 15 pushups 30
+rest 120 seconds 61
+do at least 21 pushups 48
+? seconds
+88 / 88 pushups +9
+Note: 30 in last set, pretty easy day
+
+Sun Nov 22 11:44:59 CST 2015
+week 4 day 1 level 2
+do 18 pushups 32
+rest 60 seconds 66
+do 22 pushups 38
+rest 60 seconds 69
+do 16 pushups 24
+rest 60 seconds 62
+do 16 pushups 30
+rest 60 seconds 64
+do at least 25 pushups 78
+Total
+463 seconds
+97 / 97 pushups
+Note: last 25 were hard, took 3 or 4 mini-breaks
+
+    */
+    var pushupSet = pushupData[4];
     var elems = document.getElementsByClassName("basic");
     var stepUI = document.getElementById("stepUI");
     stepUI.innerHTML += '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + pushupSet.week +
@@ -138,10 +188,13 @@ Note: should have been easy restarting at week 3. It was not super easy towards 
     }
     var curStep = -1;
     function nextStep() {
+      var snd = new Audio("C5.mp3"); snd.play();
       var todo = document.getElementById("todo");
       if (curStep < pushupSet.textSets.length) {
 	if (curStep >= 0) {
 	  document.getElementById("step" + curStep).stopwatch.stop();
+	} else {
+	  document.getElementById('workoutTitle').innerHTML = '<div>' + new Date() + '</div>' + document.getElementById('workoutTitle').innerHTML;
 	}
 	curStep++;
 	if (curStep < pushupSet.textSets.length) {
