@@ -64,7 +64,10 @@
   <div class="area">
     <div id="stepUI"></div>
   </div>
-  <div class="area"></div>
+  <div class="area">
+    <button onmousedown="alert('prevDay() not yet implemented')">Prev Day</button>
+    <button onmousedown="alert('nextDay() not yet implemented')">Next Day</button>
+  </div>
   <div class="area">
     Total<br/>
     <span id="curTotalTime"></span> seconds<br/>
@@ -84,15 +87,16 @@
   </div>
   <script>
     window.onload = function() {
-      var snd = new Audio("C5.mp3");
     }
     var pushupData = [
       { "week" : 3, "day" : 1, "col" : 2, "sets" : [12,17,13,13,17], "rest" : 60 },
       { "week" : 3, "day" : 2, "col" : 2, "sets" : [14,19,14,14,19], "rest" : 90 },
       { "week" : 3, "day" : 3, "col" : 2, "sets" : [16,21,15,15,21], "rest" : 120 },
       { "week" : 4, "day" : 1, "col" : 2, "sets" : [18,22,16,16,25], "rest" : 60 },
-      { "week" : 4, "day" : 2, "col" : 2, "sets" : [20,25,20,20,28], "rest" : 90 }
-      //{ "week" : 4, "day" : 3, "col" : 2, "sets" : [23,26,23,23,33], "rest" : 120 }
+      { "week" : 4, "day" : 2, "col" : 2, "sets" : [20,25,20,20,28], "rest" : 90 },
+      { "week" : 4, "day" : 3, "col" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
+      { "week" : 0, "day" : 0, "col" : 0, "sets" : [100], "rest" : 0 },
+      { "week" : 5, "day" : 1, "col" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
     ];
     for (var j = 0; j < pushupData.length; j++) {
       var sets = pushupData[j].sets;
@@ -105,8 +109,80 @@
       }
       pushupData[j].textSets = textSets;
     }
-    //var pushupSet = pushupData[pushupData.length - 1];
-    /*
+    var pushupSet = pushupData[4];
+    var elems = document.getElementsByClassName("basic");
+    var stepUI = document.getElementById("stepUI");
+    stepUI.innerHTML += '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + pushupSet.week +
+      '.html" target="_blank">week '+ pushupSet.week + '</a>' +
+      ' day ' + pushupSet.day + ' level ' + pushupSet.col + '</div>';
+    for (var i = 0; i < pushupSet.textSets.length; i++) {
+      stepUI.innerHTML += '<div id="step' + i + '">' + pushupSet.textSets[i] + ' </div>';
+    }
+    for (var i = 0; i < pushupSet.textSets.length; i++) {
+      new Stopwatch(document.getElementById("step" + i));
+    }
+    var curStep = -1;
+    function nextStep() {
+      var todo = document.getElementById("todo");
+      if (curStep < pushupSet.textSets.length) {
+	if (curStep >= 0) {
+	  document.getElementById("step" + curStep).stopwatch.stop();
+	} else {
+	  document.getElementById('workoutTitle').innerHTML = '<div>' + new Date() + '</div>' + document.getElementById('workoutTitle').innerHTML;
+	}
+	curStep++;
+	if (curStep < pushupSet.textSets.length) {
+	  var s = document.getElementById("step" + curStep);
+	  todo.innerText = s.innerText;
+	  s.style.backgroundColor = "pink";
+	  //new Stopwatch(s).start();
+	  s.stopwatch.start();
+	}
+	if (curStep > pushupSet.textSets.length - 1) {
+	  todo.innerText = "";
+	}
+      }
+    }
+    function totalTime() {
+      var curTotalTime = 0;
+      var curTotalPushups = 0;
+      var totalPushups = 0;
+      for (var i = 0; i < pushupSet.textSets.length; i++) {
+	var prevStep = document.getElementById('step' + (i-1));
+	var step = document.getElementById('step' + i);
+	if (step && step.stopwatch) {
+	  curTotalTime += step.stopwatch.time();
+	  // only add pushups when step has been done
+	  if (prevStep && prevStep.stopwatch.time() > 0 && !prevStep.stopwatch.running() ) {
+	    curTotalPushups += 1 * prevStep.stopwatch.pushups();
+	  }
+	  totalPushups += 1 * step.stopwatch.pushups();
+	}
+      }
+      if (curStep >= pushupSet.textSets.length) {
+	// last step was done
+	if (step && step.stopwatch) {
+	  curTotalPushups += 1 * step.stopwatch.pushups();
+	}
+      }
+      document.getElementById("curTotalTime").innerText = curTotalTime;
+      document.getElementById("curTotalPushups").innerText = curTotalPushups;
+      document.getElementById("totalPushups").innerText = totalPushups;
+    }
+    function stepTime() {
+      var stepTime = curStep <= 0 ? "Go" : "Done";
+      var step = document.getElementById('step' + curStep);
+      if (step && step.stopwatch) {
+	stepTime = step.stopwatch.render();
+      }
+      document.getElementById("stepTime").innerHTML = stepTime;
+    }
+    setInterval(totalTime, 100);   
+    setInterval(stepTime, 100);
+</script>
+</body>
+</html>
+<!--
 
 Past exercises, to be stored at some point:
 
@@ -173,78 +249,40 @@ Total
 97 / 97 pushups
 Note: last 25 were hard, took 3 or 4 mini-breaks
 
-    */
-    var pushupSet = pushupData[4];
-    var elems = document.getElementsByClassName("basic");
-    var stepUI = document.getElementById("stepUI");
-    stepUI.innerHTML += '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + pushupSet.week +
-      '.html" target="_blank">week '+ pushupSet.week + '</a>' +
-      ' day ' + pushupSet.day + ' level ' + pushupSet.col + '</div>';
-    for (var i = 0; i < pushupSet.textSets.length; i++) {
-      stepUI.innerHTML += '<div id="step' + i + '">' + pushupSet.textSets[i] + ' </div>';
-    }
-    for (var i = 0; i < pushupSet.textSets.length; i++) {
-      new Stopwatch(document.getElementById("step" + i));
-    }
-    var curStep = -1;
-    function nextStep() {
-      var snd = new Audio("C5.mp3"); snd.play();
-      var todo = document.getElementById("todo");
-      if (curStep < pushupSet.textSets.length) {
-	if (curStep >= 0) {
-	  document.getElementById("step" + curStep).stopwatch.stop();
-	} else {
-	  document.getElementById('workoutTitle').innerHTML = '<div>' + new Date() + '</div>' + document.getElementById('workoutTitle').innerHTML;
-	}
-	curStep++;
-	if (curStep < pushupSet.textSets.length) {
-	  var s = document.getElementById("step" + curStep);
-	  todo.innerText = s.innerText;
-	  s.style.backgroundColor = "pink";
-	  //new Stopwatch(s).start();
-	  s.stopwatch.start();
-	}
-	if (curStep > pushupSet.textSets.length - 1) {
-	  todo.innerText = "";
-	}
-      }
-    }
-    function totalTime() {
-      var curTotalTime = 0;
-      var curTotalPushups = 0;
-      var totalPushups = 0;
-      for (var i = 0; i < pushupSet.textSets.length; i++) {
-	var prevStep = document.getElementById('step' + (i-1));
-	var step = document.getElementById('step' + i);
-	if (step && step.stopwatch) {
-	  curTotalTime += step.stopwatch.time();
-	  // only add pushups when step has been done
-	  if (prevStep && prevStep.stopwatch.time() > 0 && !prevStep.stopwatch.running() ) {
-	    curTotalPushups += 1 * prevStep.stopwatch.pushups();
-	  }
-	  totalPushups += 1 * step.stopwatch.pushups();
-	}
-      }
-      if (curStep >= pushupSet.textSets.length) {
-	// last step was done
-	if (step && step.stopwatch) {
-	  curTotalPushups += 1 * step.stopwatch.pushups();
-	}
-      }
-      document.getElementById("curTotalTime").innerText = curTotalTime;
-      document.getElementById("curTotalPushups").innerText = curTotalPushups;
-      document.getElementById("totalPushups").innerText = totalPushups;
-    }
-    function stepTime() {
-      var stepTime = curStep <= 0 ? "Go" : "Done";
-      var step = document.getElementById('step' + curStep);
-      if (step && step.stopwatch) {
-	stepTime = step.stopwatch.render();
-      }
-      document.getElementById("stepTime").innerHTML = stepTime;
-    }
-    setInterval(totalTime, 100);   
-    setInterval(stepTime, 100);
-</script>
-</body>
-</html>
+situps exhaustion test
+Sun Nov 22 12:08:26 CST 2015
+40 situps
+
+Thu Dec 03 2015 13:13:42 GMT+0800 (China Standard Time)
+week 4 day 2 level 2
+do 20 pushups 27
+rest 90 seconds 91
+do 25 pushups 31
+rest 90 seconds 112
+do 20 pushups 26
+rest 90 seconds 90
+do 20 pushups 32
+rest 90 seconds 327
+do at least 28 pushups 50
+Total
+786 seconds
+113 / 113 pushups
+Note: last 28 were hard, even waiting 5 minutes instead of 1.5 minutes
+
+Mon Dec 14 2015 14:22:45 GMT+0100 (Central Europe Standard Time)
+week 4 day 3 level 2
+do 23 pushups 37
+rest 120 seconds 146
+do 28 pushups 45
+rest 120 seconds 136
+do 23 pushups 36
+rest 120 seconds 259
+do 23 pushups 34
+rest 120 seconds 234
+do at least 33 pushups 73
+Total
+1000 seconds
+130 / 130 pushups
+Note: was distracted so last pauses were twice normal; still had a hard time with last set. (Ha, 1000 seconds? kinda long)
+  -->
+
