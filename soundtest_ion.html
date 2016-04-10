@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple Ion.Sound Demo</title>
+    <!-- All JS -->
+    <script src="modernizr.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Plugin JS -->
+    <script src="node_modules/ion-sound/js/ion.sound.js"></script>
+    <script src="ion_demo.js"></script>
+</head>
+<body>
+  <h2>Simple Ion.Sound demo</h2>
+      
+  <div id="demo_01">
+    <div class="is-demo js-sound" data-name="beer_can_opening">
+      <div class="is-demo__info">
+        <b>beer_can_opening</b>
+	<button class="button js-action" data-action="play">►</button>
+      </div>
+    </div>
+    <div class="is-demo js-sound" data-name="bell_ring">
+      <div class="is-demo__info">
+        <b>bell_ring</b>
+	<button class="button js-action" data-action="play">►</button>
+      </div>
+    </div>
+    <div class="is-demo js-sound" data-name="branch_break">
+      <div class="is-demo__info">
+        <b>branch_break</b>
+	<button class="button js-action" data-action="play">►</button>
+      </div>
+    </div>
+    <div class="is-demo js-sound" data-name="button_click">
+      <div class="is-demo__info">
+        <b>button_click</b>
+	<button class="button js-action" data-action="play">►</button>
+      </div>
+    </div>
+    
+    <script>
+      $(document).ready(function () {
+	// just to set up the demo
+	var demo = new ion.Demo("demo_01");
+
+	// init some sounds
+	ion.sound({
+	  sounds: [
+	    {name: "beer_can_opening"},
+	    {name: "bell_ring"},
+	    {name: "branch_break"},
+	    {name: "button_click"}
+	  ],
+	  
+	  // main config
+	  path: "node_modules/ion-sound/sounds/",
+	  preload: true,
+	  multiplay: true,
+	  volume: 0.9,
+	  scope: demo,
+	  ready_callback: demo.loaded
+	});
+      });
+    </script>
+    <!-- ion installed using: "npm install ion-sound" -->
+  </div>
+</body>
+</html>
+
