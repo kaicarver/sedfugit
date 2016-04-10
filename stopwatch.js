@@ -4,6 +4,9 @@ var Stopwatch = function(elem, options) {
   options = options || {};
   options.delay = options.delay || 100;
   var timer = createTimer(), offset, clock, interval;
+  var reminderBell = new Audio("C5.mp3");
+  var reminderInterval = 10; // when overdue, ring bell every reminderInterval seconds
+  var maxReminders = 20; // when overdue, ring bell every reminderInterval seconds
   elem.appendChild(timer);
   elem.stopwatch = this;
   reset();
@@ -17,7 +20,13 @@ var Stopwatch = function(elem, options) {
   var push_re = /(\d+) pushup/;
   function update() { clock += delta(); updateDisplay(); }
   function updateDisplay() { timer.innerHTML = render(); }
-  function render() { var maxrest = elem.innerText.match(rest_re); var overdue = maxrest && maxrest[1] < time();
+  function render() { var maxrest = elem.innerText.match(rest_re); var overdue = maxrest && maxrest[1] <= time();
+		      if (overdue) {
+			var overdueTime = time() - maxrest[1];
+			if (overdueTime % reminderInterval == 0 && overdueTime < maxReminders * reminderInterval) {
+			  reminderBell.play();
+			}
+		      }
 		      return (overdue ? '<span style="color: red">' : "<span>") +  time() + "</span>"; }
   function pushups(){ var pushups = elem.innerText.match(push_re); return (pushups ? pushups[1] : 0); }
   function delta()  { var now = Date.now(), d = now - offset; offset = now; return d; }
