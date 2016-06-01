@@ -40,8 +40,8 @@
       text-align: center;
   }
   #mainUI button {
-      min-width: 14em;
-      xmin-height: 10em;
+      min-width: 5em;
+      min-height: 5em;
   }
   #mainUI #todo {
       font-size: 2.5em;
@@ -65,8 +65,8 @@
     <div id="stepUI"></div>
   </div>
   <div class="area">
-    <button onmousedown="alert('prevDay() not yet implemented')">Prev Day</button>
-    <button onmousedown="alert('nextDay() not yet implemented')">Next Day</button>
+    <button onmousedown="nextSetSet(-1)">Prev Day</button>
+    <button onmousedown="nextSetSet(1)">Next Day</button>
   </div>
   <div class="area">
     Total<br/>
@@ -87,7 +87,11 @@
   </div>
   <script>
     window.onload = function() {
+      displaySetSet(0);
     }
+    var pushupSet;
+    var curSetSetIndex;
+    var curStep;
     var pushupData = [
       { "week" : 3, "day" : 1, "col" : 2, "sets" : [12,17,13,13,17], "rest" : 60 },
       { "week" : 3, "day" : 2, "col" : 2, "sets" : [14,19,14,14,19], "rest" : 90 },
@@ -95,33 +99,41 @@
       { "week" : 4, "day" : 1, "col" : 2, "sets" : [18,22,16,16,25], "rest" : 60 },
       { "week" : 4, "day" : 2, "col" : 2, "sets" : [20,25,20,20,28], "rest" : 90 },
       { "week" : 4, "day" : 3, "col" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
-      { "week" : 0, "day" : 0, "col" : 0, "sets" : [100], "rest" : 0 },
       { "week" : 5, "day" : 1, "col" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
     ];
-    for (var j = 0; j < pushupData.length; j++) {
-      var sets = pushupData[j].sets;
-      var rest = pushupData[j].rest;
-      var textSets = [];
-      for (var i = 0; i < sets.length; i++) {
-	if (i > 0) textSets.push("rest " + rest + " seconds");
-	var extra = (i == sets.length - 1) ? "at least " : "";
-	textSets.push("do " + extra + sets[i] + " pushups");
+    function displaySetSet(setSetIndex) {
+      for (var j = 0; j < pushupData.length; j++) {
+	var sets = pushupData[j].sets;
+	var rest = pushupData[j].rest;
+	var textSets = [];
+	for (var i = 0; i < sets.length; i++) {
+	  if (i > 0) textSets.push("rest " + rest + " seconds");
+	  var extra = (i == sets.length - 1) ? "at least " : "";
+	  textSets.push("do " + extra + sets[i] + " pushups");
+	}
+	pushupData[j].textSets = textSets;
       }
-      pushupData[j].textSets = textSets;
+      curSetSetIndex = setSetIndex;
+      pushupSet = pushupData[setSetIndex];
+      var stepUI = document.getElementById("stepUI");
+      stepUI.innerHTML = '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + pushupSet.week +
+	'.html" target="_blank">week '+ pushupSet.week + '</a>' +
+	' day ' + pushupSet.day + ' level ' + pushupSet.col + '</div>';
+      for (var i = 0; i < pushupSet.textSets.length; i++) {
+	stepUI.innerHTML += '<div id="step' + i + '">' + pushupSet.textSets[i] + ' </div>';
+      }
+      for (var i = 0; i < pushupSet.textSets.length; i++) {
+	new Stopwatch(document.getElementById("step" + i));
+      }
+      curStep = -1;
     }
-    var pushupSet = pushupData[4];
-    var elems = document.getElementsByClassName("basic");
-    var stepUI = document.getElementById("stepUI");
-    stepUI.innerHTML += '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + pushupSet.week +
-      '.html" target="_blank">week '+ pushupSet.week + '</a>' +
-      ' day ' + pushupSet.day + ' level ' + pushupSet.col + '</div>';
-    for (var i = 0; i < pushupSet.textSets.length; i++) {
-      stepUI.innerHTML += '<div id="step' + i + '">' + pushupSet.textSets[i] + ' </div>';
+    function nextSetSet(increment) {
+      var newSetIndex = curSetSetIndex + increment;
+      if (newSetIndex < 0) newSetIndex = 0;
+      if (newSetIndex > pushupData.length - 1) newSetIndex = pushupData.length - 1;
+      if (newSetIndex == curSetSetIndex) return;
+      displaySetSet(newSetIndex);
     }
-    for (var i = 0; i < pushupSet.textSets.length; i++) {
-      new Stopwatch(document.getElementById("step" + i));
-    }
-    var curStep = -1;
     function nextStep() {
       var todo = document.getElementById("todo");
       if (curStep < pushupSet.textSets.length) {
@@ -284,5 +296,22 @@ Total
 1000 seconds
 130 / 130 pushups
 Note: was distracted so last pauses were twice normal; still had a hard time with last set. (Ha, 1000 seconds? kinda long)
+
+Mon Apr 11 2016 11:41:40 GMT+0800 (Taipei)
+week 4 day 2 level 2
+do 20 pushups 37
+rest 90 seconds 91
+do 25 pushups 45
+rest 90 seconds 121
+do 20 pushups 40
+rest 90 seconds 230
+do 20 pushups 47
+rest 90 seconds 866
+do at least 28 pushups 2
+Total
+1479 seconds
+113 / 113 pushups
+Note: started getting tired soon, big breaks to finish max 29. Need to make reminder bell reminder interval geometric or exponential
+
   -->
 
