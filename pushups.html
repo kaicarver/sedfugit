@@ -93,7 +93,13 @@
   </div>
   <script>
     window.onload = function() {
-      var myCurSetSetIndex = 2;
+      var myCurSetSetIndex;
+      if (typeof(localStorage.myCurSetSetIndex) !== "undefined") {
+	myCurSetSetIndex = Number(localStorage.myCurSetSetIndex);
+      } else {
+	myCurSetSetIndex = 0;
+	localStorage.myCurSetSetIndex = curSetSetIndex;
+      }
       displaySetSet('pushups', myCurSetSetIndex);
       //displaySetSet('situps', myCurSetSetIndex);
     }
@@ -132,6 +138,7 @@
 	exerciseData[j].textSets = textSets;
       }
       curSetSetIndex = setSetIndex;
+      localStorage.myCurSetSetIndex = curSetSetIndex;
       exerciseSet = exerciseData[setSetIndex];
       var stepUI = document.getElementById("stepUI");
       stepUI.innerHTML = '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + exerciseSet.week +
