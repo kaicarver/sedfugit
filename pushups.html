@@ -18,12 +18,12 @@
       left:0;    
   }
   .area:nth-child(2) {
-      top:0;
-      right:0;
-  }
-  .area:nth-child(3) {
       bottom:0;
       left:0;
+  }
+  .area:nth-child(3) {
+      top:0;
+      right:0;
   }
   .area:nth-child(4) {
       bottom:0;
@@ -65,6 +65,11 @@
     <div id="stepUI"></div>
   </div>
   <div class="area">
+    Total<br/>
+    <span id="curTotalTime"></span> seconds<br/>
+    <span id="curTotalExercises"></span> / <span id="totalExercises"></span> pushups
+  </div>
+  <div class="area">
     <div>
       <button onmousedown="displaySetSet('pushups', curSetSetIndex)">Pushups</button>
       <button onmousedown="displaySetSet('situps', curSetSetIndex)">Situps</button>
@@ -73,11 +78,6 @@
       <button onmousedown="nextSetSet(-1)">Prev Day</button>
       <button onmousedown="nextSetSet(1)">Next Day</button>
     </div>
-  </div>
-  <div class="area">
-    Total<br/>
-    <span id="curTotalTime"></span> seconds<br/>
-    <span id="curTotalExercises"></span> / <span id="totalExercises"></span> pushups
   </div>
   <div class="area">
     <div class="link"><a href="http://www.hundredpushups.com" target="_blank">pushups site</a></div>
@@ -377,5 +377,48 @@ do at least 19 pushups 35
 563 seconds
 80 / 80 pushups
 Note: max 20. Pretty easy
+
+Wed Jul 19 2017 08:49:08 GMT+0800 (China Standard Time)
+week 3 day 1 level 2
+do 12 pushups 28
+rest 60 seconds 71
+do 17 pushups 34
+rest 60 seconds 70
+do 13 pushups 35
+rest 60 seconds 75
+do 13 pushups 52
+rest 60 seconds 71
+do at least 17 pushups 169
+Note: started getting hard by set 2, 3 breaks for max 18
+
+Sun Jul 23 2017 15:28:41 GMT+0800 (China Standard Time)
+week 3 day 2 level 2
+do 14 pushups 28
+rest 90 seconds 126
+do 19 pushups 2
+rest 90 seconds 93
+do 14 pushups 32
+rest 90 seconds 121
+do 14 pushups 19
+rest 90 seconds 105
+do at least 19 pushups 182
+708 seconds
+80 / 80 pushups
+Note: could only do them one or 2 at a time in second half of last set
+
+Fri Jul 28 2017 15:59:12 GMT+0800 (China Standard Time)
+week 3 day 3 level 2
+do 16 pushups 30
+rest 120 seconds 140
+do 21 pushups 36
+rest 120 seconds 127
+do 15 pushups 36
+rest 120 seconds 127
+do 15 pushups 41
+rest 120 seconds 305
+do at least 21 pushups 185
+1027 seconds
+88 / 88 pushups
+Note: needed much estra time to finish last set
 
   -->
