@@ -93,6 +93,7 @@
   </div>
   <script>
     window.onload = function() {
+      //speak('Hello Kai! You need to go outside!');
       var myCurSetSetIndex;
       if (typeof(localStorage.myCurSetSetIndex) !== "undefined") {
 	myCurSetSetIndex = Number(localStorage.myCurSetSetIndex);
@@ -109,18 +110,24 @@
     var curStep;
     var allData = {
       'pushups' : [
-	{ "week" : 3, "day" : 1, "col" : 2, "sets" : [12,17,13,13,17], "rest" : 60 },
-	{ "week" : 3, "day" : 2, "col" : 2, "sets" : [14,19,14,14,19], "rest" : 90 },
-	{ "week" : 3, "day" : 3, "col" : 2, "sets" : [16,21,15,15,21], "rest" : 120 },
-	{ "week" : 4, "day" : 1, "col" : 2, "sets" : [18,22,16,16,25], "rest" : 60 },
-	{ "week" : 4, "day" : 2, "col" : 2, "sets" : [20,25,20,20,28], "rest" : 90 },
-	{ "week" : 4, "day" : 3, "col" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
-	{ "week" : 5, "day" : 1, "col" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
+	{ "week" : 2, "day" : 1, "level" : 2, "sets" : [ 9,11, 8, 8,11], "rest" :  60 },
+	{ "week" : 2, "day" : 2, "level" : 2, "sets" : [10,12, 9, 9,13], "rest" :  90 },
+	{ "week" : 2, "day" : 2, "level" : 3, "sets" : [12,13,10,10,15], "rest" : 120 },
+	
+	{ "week" : 3, "day" : 1, "level" : 2, "sets" : [12,17,13,13,17], "rest" :  60 },
+	{ "week" : 3, "day" : 2, "level" : 2, "sets" : [14,19,14,14,19], "rest" :  90 },
+	{ "week" : 3, "day" : 3, "level" : 2, "sets" : [16,21,15,15,21], "rest" : 120 },
+
+	{ "week" : 4, "day" : 1, "level" : 2, "sets" : [18,22,16,16,25], "rest" :  60 },
+	{ "week" : 4, "day" : 2, "level" : 2, "sets" : [20,25,20,20,28], "rest" :  90 },
+	{ "week" : 4, "day" : 3, "level" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
+
+	{ "week" : 5, "day" : 1, "level" : 2, "sets" : [28,35,25,22,35], "rest" :  60 },
       ],
       'situps' : [
-	{ "week" : 3, "day" : 1, "col" : 1, "sets" : [15,18,11,11,14], "rest" : 60 },
-	{ "week" : 3, "day" : 2, "col" : 1, "sets" : [15,18,12,12,18], "rest" : 60 },
-	{ "week" : 3, "day" : 3, "col" : 1, "sets" : [17,20,14,14,20], "rest" : 60 },
+	{ "week" : 3, "day" : 1, "level" : 1, "sets" : [15,18,11,11,14], "rest" : 60 },
+	{ "week" : 3, "day" : 2, "level" : 1, "sets" : [15,18,12,12,18], "rest" : 60 },
+	{ "week" : 3, "day" : 3, "level" : 1, "sets" : [17,20,14,14,20], "rest" : 60 },
       ]
     };
     function displaySetSet(exercise, setSetIndex) {
@@ -143,7 +150,7 @@
       var stepUI = document.getElementById("stepUI");
       stepUI.innerHTML = '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + exerciseSet.week +
 	'.html" target="_blank">week '+ exerciseSet.week + '</a>' +
-	' day ' + exerciseSet.day + ' level ' + exerciseSet.col + '</div>';
+	' day ' + exerciseSet.day + ' level ' + exerciseSet.level + '</div>';
       for (var i = 0; i < exerciseSet.textSets.length; i++) {
 	stepUI.innerHTML += '<div id="step' + i + '">' + exerciseSet.textSets[i] + ' </div>';
       }
@@ -177,9 +184,10 @@
 	  s.stopwatch.start();
 	}
 	if (curStep > exerciseSet.textSets.length - 1) {
-	  todo.innerText = "";
+	  todo.innerText = 'You are done!';
 	}
       }
+      speak(todo.innerText);
     }
     function totalTime() {
       var curTotalTime = 0;
@@ -217,6 +225,11 @@
     }
     setInterval(totalTime, 100);   
     setInterval(stepTime, 100);
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+	window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+      }
+    }
 </script>
 </body>
 </html>
@@ -491,5 +504,21 @@ Total
 656 seconds
 72 / 72 pushups
 restarted program, still could not do last two sets properly... 11 min...
+
+Sat Oct 14 2017 13:21:05 GMT+0800 (China Standard Time)
+week 2 day 1 level 2
+do 9 pushups 27
+rest 60 seconds 62
+do 11 pushups 31
+rest 60 seconds 62
+do 8 pushups 26
+rest 60 seconds 65
+do 8 pushups 27
+rest 60 seconds 61
+do at least 11 pushups 42
+Total
+403 seconds
+47 / 47 pushups
+restarted program at week 2! still barely finished without pauses...
 
   -->
