@@ -169,6 +169,7 @@
     }
     function nextStep() {
       var todo = document.getElementById("todo");
+      var speaktext = '';
       if (curStep < exerciseSet.textSets.length) {
 	if (curStep >= 0) {
 	  document.getElementById("step" + curStep).stopwatch.stop();
@@ -179,15 +180,18 @@
 	if (curStep < exerciseSet.textSets.length) {
 	  var s = document.getElementById("step" + curStep);
 	  todo.innerText = s.innerText;
+	  speaktext = todo.innerText;
 	  s.style.backgroundColor = "pink";
 	  //new Stopwatch(s).start();
 	  s.stopwatch.start();
 	}
 	if (curStep > exerciseSet.textSets.length - 1) {
 	  todo.innerText = 'You are done!';
+	  speaktext = todo.innerText;
+	  speaktext += ' You did ' + document.getElementById("totalExercises").innerText + ' ' + curExercise + ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
 	}
       }
-      speak(todo.innerText);
+      speak(speaktext);
     }
     function totalTime() {
       var curTotalTime = 0;
@@ -637,6 +641,41 @@ Total
 814 seconds
 99 / 97 pushups
 max 27 +2 needed 2 breaks in the last set, took too long at first because was busy cooking
+
+
+Fri Jul 06 2018 20:21:33 GMT+0200 (Central European Summer Time)
+week 3 day 1 level 2
+do 12 pushups 34
+rest 60 seconds 63
+do 17 pushups 34
+rest 60 seconds 58
+do 13 pushups 33
+rest 60 seconds 59
+do 13 pushups 44
+rest 60 seconds 119
+do at least 17 pushups 135
+Total
+579 seconds
+72 / 72 pushups
+max 17 had trouble in the two sets, especially the last one
+
+
+Thu Aug 16 2018 16:10:48 GMT+0200 (Central European Summer Time)
+week 2 day 1 level 2
+do 9 pushups 22
+rest 60 seconds 0
+do 11 pushups 72
+rest 60 seconds 64
+do 8 pushups 18
+rest 60 seconds 57
+do 8 pushups 16
+rest 60 seconds 49
+do at least 11 pushups 31
+Total
+329 seconds
+47 / 47 pushups
+max 15. Restart slooow. At least I could do this.
+
 
 TODO: express total time in minutes; compare expected time with actual time.
 
