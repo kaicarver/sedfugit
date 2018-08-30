@@ -188,7 +188,7 @@
 	if (curStep > exerciseSet.textSets.length - 1) {
 	  todo.innerText = 'You are done!';
 	  speaktext = todo.innerText;
-	  speaktext += ' You did ' + document.getElementById("totalExercises").innerText + ' ' + curExercise + ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
+	  speaktext += ' You did at least ' + document.getElementById("totalExercises").innerText + ' ' + curExercise + ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
 	}
       }
       speak(speaktext);
@@ -692,7 +692,40 @@ Total
 53 / 53 pushups
 max 20. Pretty easy, got a bit distracted while doing it so some of the breaks were a bit longer
 
+Wed Aug 29 2018 05:50:40 GMT+0200 (Central European Summer Time)
+week 2 day 3 level 2
+do 12 pushups 22
+rest 120 seconds 135
+do 13 pushups 25
+rest 120 seconds 126
+do 10 pushups 19
+rest 120 seconds 124
+do 10 pushups 23
+rest 120 seconds 128
+do at least 15 pushups 46
+Total
+648 seconds
+60 / 60 pushups
+max: 25. Not too hard. Guess could do better form but I wanted to get it over with.
 
+Thu Aug 30 2018 18:05:13 GMT+0200 (Central European Summer Time)
+week 3 day 1 level 2
+do 12 pushups 28
+rest 60 seconds 63
+do 17 pushups 1608
+rest 60 seconds 90
+do 13 pushups 24
+rest 60 seconds 91
+do 13 pushups 26
+rest 60 seconds 114
+do at least 17 pushups 42
+Total
+2086 seconds
+72 / 72 pushups
+max: 20. oops I should have waited another day, not too hard, but was interrupted by call.
+
+
+TODO: allow manually adding a date for the next session, store into localStorage
 TODO: express total time in minutes; compare expected time with actual time.
 
 Dev note: How to formalize this for storage:
