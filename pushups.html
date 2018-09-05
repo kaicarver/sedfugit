@@ -66,8 +66,9 @@
   </div>
   <div class="area">
     Total<br/>
-    <span id="curTotalTime"></span> seconds<br/>
-    <span id="curTotalExercises"></span> / <span id="totalExercises"></span> pushups
+    <span id="curTotalTime"></span> seconds<br>
+    <span id="curTotalExercises"></span> / <span id="totalExercises"></span> pushups<br>
+    Last workout: <span id="lastWorkoutDate">never???</span>
   </div>
   <div class="area">
     <div>
@@ -92,6 +93,7 @@
     </div>
   </div>
   <script>
+    var lastWorkoutDate;
     window.onload = function() {
       //speak('Hello Kai! You need to go outside!');
       var myCurSetSetIndex;
@@ -100,6 +102,11 @@
       } else {
 	myCurSetSetIndex = 0;
 	localStorage.myCurSetSetIndex = curSetSetIndex;
+      }
+      if (typeof(localStorage.lastWorkoutDate) !== "undefined") {
+	lastWorkoutDate = new Date(Date.parse(localStorage.lastWorkoutDate));
+      } else {
+	lastWorkoutDate = 'never?';
       }
       displaySetSet('pushups', myCurSetSetIndex);
       //displaySetSet('situps', myCurSetSetIndex);
@@ -187,6 +194,7 @@
 	}
 	if (curStep > exerciseSet.textSets.length - 1) {
 	  todo.innerText = 'You are done!';
+	  localStorage.lastWorkoutDate = new Date();
 	  speaktext = todo.innerText;
 	  speaktext += ' You did at least ' + document.getElementById("totalExercises").innerText + ' ' + curExercise + ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
 	}
@@ -218,6 +226,7 @@
       document.getElementById("curTotalTime").innerText = curTotalTime;
       document.getElementById("curTotalExercises").innerText = curTotalExercises;
       document.getElementById("totalExercises").innerText = totalExercises;
+      document.getElementById("lastWorkoutDate").innerText = lastWorkoutDate;
     }
     function stepTime() {
       var stepTime = curStep <= 0 ? "Go" : "Done";
@@ -724,6 +733,21 @@ Total
 72 / 72 pushups
 max: 20. oops I should have waited another day, not too hard, but was interrupted by call.
 
+Sun Sep 02 2018 08:59:15 GMT+0200 (Central European Summer Time)
+week 3 day 2 level 2
+do 14 pushups 32
+rest 90 seconds 89
+do 19 pushups 57
+rest 90 seconds 107
+do 14 pushups 46
+rest 90 seconds 157
+do 14 pushups 29
+rest 90 seconds 92
+do at least 19 pushups 124
+Total
+733 seconds
+80 / 80 pushups
+max 21. pretty ok, took a bit longer due to distraction. tried Wim Hof style breathing
 
 TODO: allow manually adding a date for the next session, store into localStorage
 TODO: express total time in minutes; compare expected time with actual time.
