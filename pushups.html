@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<title>Pushups Test</title>
+<title>100 Pushups Program</title>
 <script src="stopwatch.js"></script>
 <style>
   /* general 4-corner and center areas positioning */
@@ -104,9 +104,9 @@
 	localStorage.myCurSetSetIndex = curSetSetIndex;
       }
       if (typeof(localStorage.lastWorkoutDate) !== "undefined") {
-	lastWorkoutDate = new Date(Date.parse(localStorage.lastWorkoutDate));
+	lastWorkoutDate = (new Date(Date.parse(localStorage.lastWorkoutDate))).toString().slice(0,33);
       } else {
-	lastWorkoutDate = 'never?';
+	lastWorkoutDate = 'never';
       }
       displaySetSet('pushups', myCurSetSetIndex);
       //displaySetSet('situps', myCurSetSetIndex);
@@ -155,9 +155,7 @@
       localStorage.myCurSetSetIndex = curSetSetIndex;
       exerciseSet = exerciseData[setSetIndex];
       var stepUI = document.getElementById("stepUI");
-      stepUI.innerHTML = '<div id="workoutTitle"><a href="http://www.hundredpushups.com/week' + exerciseSet.week +
-	'.html" target="_blank">week '+ exerciseSet.week + '</a>' +
-	' day ' + exerciseSet.day + ' level ' + exerciseSet.level + '</div>';
+      stepUI.innerHTML = '<div id="workoutTitle">' + setSetName(exercise, setSetIndex) + '</div>';
       for (var i = 0; i < exerciseSet.textSets.length; i++) {
 	stepUI.innerHTML += '<div id="step' + i + '">' + exerciseSet.textSets[i] + ' </div>';
       }
@@ -165,6 +163,15 @@
 	new Stopwatch(document.getElementById("step" + i));
       }
       curStep = -1;
+    }
+    function setSetName(exercise, setSetIndex) {
+      if (typeof exercise === "undefined" || typeof setSetIndex === "undefined")
+	return "unknown exercise ";
+      var exerciseData = allData[exercise];
+      var exerciseSet = exerciseData[setSetIndex];
+      return '<a href="http://www.hundredpushups.com/week' + exerciseSet.week +
+	'.html" target="_blank">week '+ exerciseSet.week + '</a>' +
+	' day ' + exerciseSet.day + ' level ' + exerciseSet.level
     }
     function nextSetSet(increment) {
       var newSetIndex = curSetSetIndex + increment;
@@ -195,6 +202,8 @@
 	if (curStep > exerciseSet.textSets.length - 1) {
 	  todo.innerText = 'You are done!';
 	  localStorage.lastWorkoutDate = new Date();
+	  localStorage.lastExercise = 'pushups';
+	  localStorage.lastSetSetIndex = curSetSetIndex;
 	  speaktext = todo.innerText;
 	  speaktext += ' You did at least ' + document.getElementById("totalExercises").innerText + ' ' + curExercise + ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
 	}
@@ -223,10 +232,15 @@
 	  curTotalExercises += 1 * step.stopwatch.pushups();
 	}
       }
+      var lastWorkoutHoursAgo =
+	  Math.floor((new Date() - new Date(lastWorkoutDate)) / (60 * 60)) / 1000;
+      lastWorkoutHoursAgo = lastWorkoutHoursAgo ? lastWorkoutHoursAgo : "many";
       document.getElementById("curTotalTime").innerText = curTotalTime;
       document.getElementById("curTotalExercises").innerText = curTotalExercises;
       document.getElementById("totalExercises").innerText = totalExercises;
-      document.getElementById("lastWorkoutDate").innerText = lastWorkoutDate;
+      document.getElementById("lastWorkoutDate").innerHTML =
+	setSetName(localStorage.lastExercise, localStorage.lastSetSetIndex) + ' '
+	+ lastWorkoutDate + ' - ' + lastWorkoutHoursAgo + ' hours ago';
     }
     function stepTime() {
       var stepTime = curStep <= 0 ? "Go" : "Done";
@@ -749,6 +763,103 @@ Total
 80 / 80 pushups
 max 21. pretty ok, took a bit longer due to distraction. tried Wim Hof style breathing
 
+Wed Sep 05 2018 08:40:57 GMT+0200 (Central European Summer Time)
+week 3 day 3 level 2
+do 16 pushups 31
+rest 120 seconds 170
+do 21 pushups 34
+rest 120 seconds 127
+do 15 pushups 31
+rest 120 seconds 143
+do 15 pushups 30
+rest 120 seconds 140
+do at least 21 pushups 50
+Total
+756 seconds
+88 / 88 pushups
+max 21, last set quite hard
+
+Sun Sep 09 2018 16:00:05 GMT+0200 (Central European Summer Time)
+week 4 day 1 level 2
+do 18 pushups 31
+rest 60 seconds 60
+do 22 pushups 37
+rest 60 seconds 73
+do 16 pushups 33
+rest 60 seconds 90
+do 16 pushups 52
+rest 60 seconds 435
+do at least 25 pushups 54
+Total
+865 seconds
+97 / 97 pushups
+max 30 after a long 7-minute rest doing the dishes, this was a hard set
+
+Fri Sep 14 2018 14:15:19 GMT+0200 (Central European Summer Time)
+week 4 day 2 level 2
+do 20 pushups 30
+rest 90 seconds 97
+do 25 pushups 39
+rest 90 seconds 99
+do 20 pushups 96
+rest 90 seconds 127
+do 20 pushups 79
+rest 90 seconds 151
+do at least 28 pushups 221
+Total
+939 seconds
+113 / 113 pushups
+mas 34 but split in two sessions, I started dying in the next to last session. Redo!
+
+Tue Sep 18 2018 11:54:07 GMT+0200 (Central European Summer Time)
+week 4 day 2 level 2
+do 20 pushups 34
+rest 90 seconds 96
+do 25 pushups 40
+rest 90 seconds 124
+do 20 pushups 38
+rest 90 seconds 106
+do 20 pushups 69
+rest 90 seconds 275
+do at least 28 pushups 57
+Total
+839 seconds
+113 / 113 pushups
+max 28: still split, but a bit faster than last time... maybe move on and do week over if 3d day is also bad?
+
+Thu Sep 20 2018 08:15:31 GMT+0200 (Central European Summer Time) - 1.565 hours ago
+week 4 day 3 level 2
+do 23 pushups
+rest 120 seconds
+do 28 pushups
+rest 120 seconds
+do 23 pushups
+rest 120 seconds
+do 23 pushups
+rest 120 seconds
+do at least 33 pushups
+Total
+0 seconds
+0 / 130 pushups
+max 33, not bad, but took longer breaks. No time info because forgot to copy/paste... 
+
+Tue Nov 20 2018 08:34:16 GMT+0100 (Central European Standard Time)
+week 2 day 1 level 2
+do 9 pushups 20
+rest 60 seconds 151
+do 11 pushups 21
+rest 60 seconds 77
+do 8 pushups 19
+rest 60 seconds 70
+do 8 pushups 20
+rest 60 seconds 62
+do at least 11 pushups 62
+Total
+502 seconds
+47 / 47 pushups
+max 20, easy, restarted program yet again
+
+TODO: along with the date of last workout, specify what it was: week, day, level
 TODO: allow manually adding a date for the next session, store into localStorage
 TODO: express total time in minutes; compare expected time with actual time.
 
