@@ -234,13 +234,16 @@
       }
       var lastWorkoutHoursAgo =
 	  Math.floor((new Date() - new Date(lastWorkoutDate)) / (60 * 60)) / 1000;
-      lastWorkoutHoursAgo = lastWorkoutHoursAgo ? lastWorkoutHoursAgo : "many";
+      lastWorkoutHoursAgo = lastWorkoutHoursAgo ? hoursInDays(lastWorkoutHoursAgo) : "many";
       document.getElementById("curTotalTime").innerText = curTotalTime;
       document.getElementById("curTotalExercises").innerText = curTotalExercises;
       document.getElementById("totalExercises").innerText = totalExercises;
       document.getElementById("lastWorkoutDate").innerHTML =
-	setSetName(localStorage.lastExercise, localStorage.lastSetSetIndex) + ' '
-	+ lastWorkoutDate + ' - ' + lastWorkoutHoursAgo + ' hours ago';
+	setSetName(localStorage.lastExercise, localStorage.lastSetSetIndex) + ', '
+	+ '<span title="' + lastWorkoutDate + '">' + lastWorkoutDate.toString().slice(0,10) + '</span>, ' + lastWorkoutHoursAgo + ' hours ago';
+    }
+    function hoursInDays(hours) {
+      return (hours >= 24 ? Math.trunc(hours / 24) + " days, " : "") + Math.round(hours % 24)
     }
     function stepTime() {
       var stepTime = curStep <= 0 ? "Go" : "Done";
@@ -859,7 +862,24 @@ Total
 47 / 47 pushups
 max 20, easy, restarted program yet again
 
-TODO: along with the date of last workout, specify what it was: week, day, level
+Sun Nov 25 2018 12:21:31 GMT+0100 (Central European Standard Time)
+week 2 day 2 level 2
+do 10 pushups 30
+rest 90 seconds 135
+do 12 pushups 22
+rest 90 seconds 119
+do 9 pushups 28
+rest 90 seconds 65
+do 9 pushups 19
+rest 90 seconds 83
+do at least 13 pushups 45
+Total
+546 seconds
+53 / 53 pushups
+max +7: easy, but last one was a bit hard
+
+
+DONE: along with the date of last workout, specify what it was: week, day, level
 TODO: allow manually adding a date for the next session, store into localStorage
 TODO: express total time in minutes; compare expected time with actual time.
 
