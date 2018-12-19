@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<title>100 Pushups Program</title>
-<script src="stopwatch.js"></script>
-<style>
-  /* general 4-corner and center areas positioning */
-  .area {
-    position:absolute;
-    margin:0;
-    padding:5px;
-  }
-  .area:nth-child(1) {
-      top:0;
-      left:0;    
-  }
-  .area:nth-child(2) {
-      bottom:0;
-      left:0;
-  }
-  .area:nth-child(3) {
-      top:0;
-      right:0;
-  }
-  .area:nth-child(4) {
-      bottom:0;
-      right:0;
-  }
-  .area:nth-child(5) {
-      top:50%;
-      left:50%;
-      transform: translate(-50%,-50%);
-  }
-  /* specific styles */
-  body { font-family: Arial; }
-  #mainUI {
+  <meta charset="utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>100 Pushups Program</title>
+  <script src="stopwatch.js"></script>
+  <style>
+    /* general 4-corner and center areas positioning */
+    .area {
+      position: absolute;
+      margin: 0;
+      padding: 5px;
+    }
+
+    .area:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+
+    .area:nth-child(2) {
+      bottom: 0;
+      left: 0;
+    }
+
+    .area:nth-child(3) {
+      top: 0;
+      right: 0;
+    }
+
+    .area:nth-child(4) {
+      bottom: 0;
+      right: 0;
+    }
+
+    .area:nth-child(5) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* specific styles */
+    body {
+      font-family: Arial;
+    }
+
+    #mainUI {
       text-align: center;
-  }
-  #mainUI button {
+    }
+
+    #mainUI button {
       min-width: 5em;
       min-height: 5em;
-  }
-  #mainUI #todo {
+    }
+
+    #mainUI #todo {
       font-size: 2.5em;
-  }
-  #mainUI #stepTime {
+    }
+
+    #mainUI #stepTime {
       font-size: 10em;
       margin-top: -0.15em;
       margin-bottom: -0.1em;
-  }
-  input, select, button {
-    font-family: inherit;
-    font-size: inherit;
-  }
-  #workoutTitle {
+    }
+
+    input,
+    select,
+    button {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    #workoutTitle {
       font-style: italic;
-  }
-</style>
+    }
+  </style>
 </head>
+
 <body>
   <div class="area">
     <div id="stepUI"></div>
   </div>
   <div class="area">
-    Total<br/>
+    Total<br />
     <span id="curTotalTime"></span> seconds<br>
     <span id="curTotalExercises"></span> / <span id="totalExercises"></span> pushups<br>
     Last workout: <span id="lastWorkoutDate">never???</span>
@@ -87,26 +104,26 @@
   <div class="area">
     <div id="mainUI">
       <button onmousedown="nextStep()">
-	<div id="todo"></div>
-	<div id="stepTime"></div>
+        <div id="todo"></div>
+        <div id="stepTime"></div>
       </button>
     </div>
   </div>
   <script>
     var lastWorkoutDate;
-    window.onload = function() {
+    window.onload = function () {
       //speak('Hello Kai! You need to go outside!');
       var myCurSetSetIndex;
-      if (typeof(localStorage.myCurSetSetIndex) !== "undefined") {
-	myCurSetSetIndex = Number(localStorage.myCurSetSetIndex);
+      if (typeof (localStorage.myCurSetSetIndex) !== "undefined") {
+        myCurSetSetIndex = Number(localStorage.myCurSetSetIndex);
       } else {
-	myCurSetSetIndex = 0;
-	localStorage.myCurSetSetIndex = curSetSetIndex;
+        myCurSetSetIndex = 0;
+        localStorage.myCurSetSetIndex = curSetSetIndex;
       }
-      if (typeof(localStorage.lastWorkoutDate) !== "undefined") {
-	lastWorkoutDate = (new Date(Date.parse(localStorage.lastWorkoutDate))).toString().slice(0,33);
+      if (typeof (localStorage.lastWorkoutDate) !== "undefined") {
+        lastWorkoutDate = (new Date(Date.parse(localStorage.lastWorkoutDate))).toString().slice(0, 33);
       } else {
-	lastWorkoutDate = 'never';
+        lastWorkoutDate = 'never';
       }
       displaySetSet('pushups', myCurSetSetIndex);
       //displaySetSet('situps', myCurSetSetIndex);
@@ -116,40 +133,117 @@
     var curSetSetIndex;
     var curStep;
     var allData = {
-      'pushups' : [
-	{ "week" : 2, "day" : 1, "level" : 2, "sets" : [ 9,11, 8, 8,11], "rest" :  60 },
-	{ "week" : 2, "day" : 2, "level" : 2, "sets" : [10,12, 9, 9,13], "rest" :  90 },
-	{ "week" : 2, "day" : 3, "level" : 2, "sets" : [12,13,10,10,15], "rest" : 120 },
-	
-	{ "week" : 3, "day" : 1, "level" : 2, "sets" : [12,17,13,13,17], "rest" :  60 },
-	{ "week" : 3, "day" : 2, "level" : 2, "sets" : [14,19,14,14,19], "rest" :  90 },
-	{ "week" : 3, "day" : 3, "level" : 2, "sets" : [16,21,15,15,21], "rest" : 120 },
+      'pushups': [{
+          "week": 2,
+          "day": 1,
+          "level": 2,
+          "sets": [9, 11, 8, 8, 11],
+          "rest": 60
+        },
+        {
+          "week": 2,
+          "day": 2,
+          "level": 2,
+          "sets": [10, 12, 9, 9, 13],
+          "rest": 90
+        },
+        {
+          "week": 2,
+          "day": 3,
+          "level": 2,
+          "sets": [12, 13, 10, 10, 15],
+          "rest": 120
+        },
 
-	{ "week" : 4, "day" : 1, "level" : 2, "sets" : [18,22,16,16,25], "rest" :  60 },
-	{ "week" : 4, "day" : 2, "level" : 2, "sets" : [20,25,20,20,28], "rest" :  90 },
-	{ "week" : 4, "day" : 3, "level" : 2, "sets" : [23,28,23,23,33], "rest" : 120 },
+        {
+          "week": 3,
+          "day": 1,
+          "level": 2,
+          "sets": [12, 17, 13, 13, 17],
+          "rest": 60
+        },
+        {
+          "week": 3,
+          "day": 2,
+          "level": 2,
+          "sets": [14, 19, 14, 14, 19],
+          "rest": 90
+        },
+        {
+          "week": 3,
+          "day": 3,
+          "level": 2,
+          "sets": [16, 21, 15, 15, 21],
+          "rest": 120
+        },
 
-	{ "week" : 5, "day" : 1, "level" : 2, "sets" : [28,35,25,22,35], "rest" :  60 },
+        {
+          "week": 4,
+          "day": 1,
+          "level": 2,
+          "sets": [18, 22, 16, 16, 25],
+          "rest": 60
+        },
+        {
+          "week": 4,
+          "day": 2,
+          "level": 2,
+          "sets": [20, 25, 20, 20, 28],
+          "rest": 90
+        },
+        {
+          "week": 4,
+          "day": 3,
+          "level": 2,
+          "sets": [23, 28, 23, 23, 33],
+          "rest": 120
+        },
+
+        {
+          "week": 5,
+          "day": 1,
+          "level": 2,
+          "sets": [28, 35, 25, 22, 35],
+          "rest": 60
+        },
       ],
-      'situps' : [
-	{ "week" : 3, "day" : 1, "level" : 1, "sets" : [15,18,11,11,14], "rest" : 60 },
-	{ "week" : 3, "day" : 2, "level" : 1, "sets" : [15,18,12,12,18], "rest" : 60 },
-	{ "week" : 3, "day" : 3, "level" : 1, "sets" : [17,20,14,14,20], "rest" : 60 },
+      'situps': [{
+          "week": 3,
+          "day": 1,
+          "level": 1,
+          "sets": [15, 18, 11, 11, 14],
+          "rest": 60
+        },
+        {
+          "week": 3,
+          "day": 2,
+          "level": 1,
+          "sets": [15, 18, 12, 12, 18],
+          "rest": 60
+        },
+        {
+          "week": 3,
+          "day": 3,
+          "level": 1,
+          "sets": [17, 20, 14, 14, 20],
+          "rest": 60
+        },
       ]
     };
+
     function displaySetSet(exercise, setSetIndex) {
       curExercise = exercise;
       var exerciseData = allData[exercise];
       for (var j = 0; j < exerciseData.length; j++) {
-	var sets = exerciseData[j].sets;
-	var rest = exerciseData[j].rest;
-	var textSets = [];
-	for (var i = 0; i < sets.length; i++) {
-	  if (i > 0) textSets.push("rest " + rest + " seconds");
-	  var extra = (i == sets.length - 1) ? "at least " : "";
-	  textSets.push("do " + extra + sets[i] + " " + exercise);
-	}
-	exerciseData[j].textSets = textSets;
+        var sets = exerciseData[j].sets;
+        var rest = exerciseData[j].rest;
+        var textSets = [];
+        for (var i = 0; i < sets.length; i++) {
+          if (i > 0) textSets.push("rest " + rest + " seconds");
+          var extra = (i == sets.length - 1) ? "at least " : "";
+          textSets.push("do " + extra + sets[i] + " " + exercise);
+        }
+        exerciseData[j].textSets = textSets;
       }
       curSetSetIndex = setSetIndex;
       localStorage.myCurSetSetIndex = curSetSetIndex;
@@ -157,22 +251,24 @@
       var stepUI = document.getElementById("stepUI");
       stepUI.innerHTML = '<div id="workoutTitle">' + setSetName(exercise, setSetIndex) + '</div>';
       for (var i = 0; i < exerciseSet.textSets.length; i++) {
-	stepUI.innerHTML += '<div id="step' + i + '">' + exerciseSet.textSets[i] + ' </div>';
+        stepUI.innerHTML += '<div id="step' + i + '">' + exerciseSet.textSets[i] + ' </div>';
       }
       for (var i = 0; i < exerciseSet.textSets.length; i++) {
-	new Stopwatch(document.getElementById("step" + i));
+        new Stopwatch(document.getElementById("step" + i));
       }
       curStep = -1;
     }
+
     function setSetName(exercise, setSetIndex) {
       if (typeof exercise === "undefined" || typeof setSetIndex === "undefined")
-	return "unknown exercise ";
+        return "unknown exercise ";
       var exerciseData = allData[exercise];
       var exerciseSet = exerciseData[setSetIndex];
       return '<a href="http://www.hundredpushups.com/week' + exerciseSet.week +
-	'.html" target="_blank">week '+ exerciseSet.week + '</a>' +
-	' day ' + exerciseSet.day + ' level ' + exerciseSet.level
+        '.html" target="_blank">week ' + exerciseSet.week + '</a>' +
+        ' day ' + exerciseSet.day + ' level ' + exerciseSet.level
     }
+
     function nextSetSet(increment) {
       var newSetIndex = curSetSetIndex + increment;
       var exerciseData = allData[curExercise];
@@ -181,87 +277,96 @@
       if (newSetIndex == curSetSetIndex) return;
       displaySetSet(curExercise, newSetIndex);
     }
+
     function nextStep() {
       var todo = document.getElementById("todo");
       var speaktext = '';
       if (curStep < exerciseSet.textSets.length) {
-	if (curStep >= 0) {
-	  document.getElementById("step" + curStep).stopwatch.stop();
-	} else {
-	  document.getElementById('workoutTitle').innerHTML = '<div>' + new Date() + '</div>' + document.getElementById('workoutTitle').innerHTML;
-	}
-	curStep++;
-	if (curStep < exerciseSet.textSets.length) {
-	  var s = document.getElementById("step" + curStep);
-	  todo.innerText = s.innerText;
-	  speaktext = todo.innerText;
-	  s.style.backgroundColor = "pink";
-	  //new Stopwatch(s).start();
-	  s.stopwatch.start();
-	}
-	if (curStep > exerciseSet.textSets.length - 1) {
-	  todo.innerText = 'You are done!';
-	  localStorage.lastWorkoutDate = new Date();
-	  localStorage.lastExercise = 'pushups';
-	  localStorage.lastSetSetIndex = curSetSetIndex;
-	  speaktext = todo.innerText;
-	  speaktext += ' You did at least ' + document.getElementById("totalExercises").innerText + ' ' + curExercise + ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
-	}
+        if (curStep >= 0) {
+          document.getElementById("step" + curStep).stopwatch.stop();
+        } else {
+          document.getElementById('workoutTitle').innerHTML = '<div>' + new Date() + '</div>' + document.getElementById(
+            'workoutTitle').innerHTML;
+        }
+        curStep++;
+        if (curStep < exerciseSet.textSets.length) {
+          var s = document.getElementById("step" + curStep);
+          todo.innerText = s.innerText;
+          speaktext = todo.innerText;
+          s.style.backgroundColor = "pink";
+          //new Stopwatch(s).start();
+          s.stopwatch.start();
+        }
+        if (curStep > exerciseSet.textSets.length - 1) {
+          todo.innerText = 'You are done!';
+          localStorage.lastWorkoutDate = new Date();
+          localStorage.lastExercise = 'pushups';
+          localStorage.lastSetSetIndex = curSetSetIndex;
+          speaktext = todo.innerText;
+          speaktext += ' You did at least ' + document.getElementById("totalExercises").innerText + ' ' + curExercise +
+            ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
+        }
       }
       speak(speaktext);
     }
+
     function totalTime() {
       var curTotalTime = 0;
       var curTotalExercises = 0;
       var totalExercises = 0;
       for (var i = 0; i < exerciseSet.textSets.length; i++) {
-	var prevStep = document.getElementById('step' + (i-1));
-	var step = document.getElementById('step' + i);
-	if (step && step.stopwatch) {
-	  curTotalTime += step.stopwatch.time();
-	  // only add exercises when step has been done
-	  if (prevStep && prevStep.stopwatch.time() > 0 && !prevStep.stopwatch.running() ) {
-	    curTotalExercises += 1 * prevStep.stopwatch.pushups();
-	  }
-	  totalExercises += 1 * step.stopwatch.pushups();
-	}
+        var prevStep = document.getElementById('step' + (i - 1));
+        var step = document.getElementById('step' + i);
+        if (step && step.stopwatch) {
+          curTotalTime += step.stopwatch.time();
+          // only add exercises when step has been done
+          if (prevStep && prevStep.stopwatch.time() > 0 && !prevStep.stopwatch.running()) {
+            curTotalExercises += 1 * prevStep.stopwatch.pushups();
+          }
+          totalExercises += 1 * step.stopwatch.pushups();
+        }
       }
       if (curStep >= exerciseSet.textSets.length) {
-	// last step was done
-	if (step && step.stopwatch) {
-	  curTotalExercises += 1 * step.stopwatch.pushups();
-	}
+        // last step was done
+        if (step && step.stopwatch) {
+          curTotalExercises += 1 * step.stopwatch.pushups();
+        }
       }
       var lastWorkoutHoursAgo =
-	  Math.floor((new Date() - new Date(lastWorkoutDate)) / (60 * 60)) / 1000;
+        Math.floor((new Date() - new Date(lastWorkoutDate)) / (60 * 60)) / 1000;
       lastWorkoutHoursAgo = lastWorkoutHoursAgo ? hoursInDays(lastWorkoutHoursAgo) : "many";
       document.getElementById("curTotalTime").innerText = curTotalTime;
       document.getElementById("curTotalExercises").innerText = curTotalExercises;
       document.getElementById("totalExercises").innerText = totalExercises;
       document.getElementById("lastWorkoutDate").innerHTML =
-	setSetName(localStorage.lastExercise, localStorage.lastSetSetIndex) + ', '
-	+ '<span title="' + lastWorkoutDate + '">' + lastWorkoutDate.toString().slice(0,10) + '</span>, ' + lastWorkoutHoursAgo + ' hours ago';
+        setSetName(localStorage.lastExercise, localStorage.lastSetSetIndex) + ', ' +
+        '<span title="' + lastWorkoutDate + '">' + lastWorkoutDate.toString().slice(0, 10) + '</span>, ' +
+        lastWorkoutHoursAgo + ' hours ago';
     }
+
     function hoursInDays(hours) {
       return (hours >= 24 ? Math.trunc(hours / 24) + " days, " : "") + Math.round(hours % 24)
     }
+
     function stepTime() {
       var stepTime = curStep <= 0 ? "Go" : "Done";
       var step = document.getElementById('step' + curStep);
       if (step && step.stopwatch) {
-	stepTime = step.stopwatch.render();
+        stepTime = step.stopwatch.render();
       }
       document.getElementById("stepTime").innerHTML = stepTime;
     }
-    setInterval(totalTime, 100);   
+    setInterval(totalTime, 100);
     setInterval(stepTime, 100);
+
     function speak(text) {
       if ('speechSynthesis' in window) {
-	window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+        window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
       }
     }
-</script>
+  </script>
 </body>
+
 </html>
 <!--
 
@@ -893,6 +998,72 @@ Total
 675 seconds
 60 / 60 pushups
 max: +10 not too hard
+
+Wed Dec 05 2018 10:48:53 GMT+0100 (Central European Standard Time)
+week 3 day 1 level 2
+do 12 pushups 29
+rest 60 seconds 62
+do 17 pushups 37
+rest 60 seconds 91
+do 13 pushups 26
+rest 60 seconds 112
+do 13 pushups 26
+rest 60 seconds 79
+do at least 17 pushups 50
+Total
+512 seconds
+72 / 72 pushups
+max: +1 not too hard but last set tough. I'm pretty tired today tho
+
+Wed Dec 12 2018 10:46:36 GMT+0100 (Central European Standard Time)
+week 3 day 1 level 2
+do 12 pushups 32
+rest 60 seconds 71
+do 17 pushups 30
+rest 60 seconds 64
+do 13 pushups 26
+rest 60 seconds 63
+do 13 pushups 26
+rest 60 seconds 69
+do at least 17 pushups 77
+Total
+458 seconds
+72 / 72 pushups
+max +0: last set tough but doable
+
+Sun Dec 16 2018 11:43:16 GMT+0100 (Central European Standard Time)
+week 3 day 2 level 2
+do 14 pushups 28
+rest 90 seconds 95
+do 19 pushups 32
+rest 90 seconds 93
+do 14 pushups 25
+rest 90 seconds 94
+do 14 pushups 43
+rest 90 seconds 93
+do at least 19 pushups 65
+Total
+568 seconds
+80 / 80 pushups
+max: +1 needed a small break to finish last set
+
+Wed Dec 19 2018 07:59:22 GMT+0100 (Central European Standard Time)
+week 3 day 3 level 2
+do 16 pushups 29
+rest 120 seconds 74
+do 21 pushups 35
+rest 120 seconds 118
+do 15 pushups 24
+rest 120 seconds 134
+do 15 pushups 27
+rest 120 seconds 126
+do at least 21 pushups 52
+Total
+619 seconds
+88 / 88 pushups
+max: +4 not too hard, was even a bit accelerated as I rushed to get out
+
+BUG: last workout: ... 6 days 24 hours ago (because rounded up from 23:45 hours
 
 TODO: add manual note about max, how it went, store it somehow, see history.....
 TODO: allow manually adding a date for the next session, store into localStorage, and notify!
