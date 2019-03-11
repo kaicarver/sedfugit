@@ -1,0 +1,873 @@
+Past exercises, to be stored better at some point:
+
+Wed Nov  4 18:02:37 CST 2015
+week 3 day 1 level 2
+do 12 pushups 24
+rest 60 seconds 59
+do 17 pushups 34
+rest 60 seconds 59
+do 13 pushups 30
+rest 60 seconds 65
+do 13 pushups 29
+rest 60 seconds 63
+do at least 17 pushups 53
+Total
+416 seconds
+72 / 72 pushups
+Note: should have been easy restarting at week 3. It was not super easy towards the end -- barely could do the last set, with a tiny bit of pausing. Still, it's nice to be able to do a full set without totally dying and failing to do it properly. Something to be said for maxxing ou only at the end, not already at the 3d or 4th set.
+
+Sun Nov 8 11 am
+week 3 day 2 level 2
+do 14 pushups 25
+rest 90 seconds 105
+do 19 pushups 33
+rest 90 seconds 89
+do 14 pushups 25
+rest 90 seconds 90
+do 14 pushups 22
+rest 90 seconds 101
+do at least 19 pushups 43
+Total
+533 seconds
+80 / 80 pushups +6
+Note: did 25 in last set. First time in a long time I can do a full set without trouble. Yay!
+
+Thu Nov 19 12:15:58 CST 2015
+week 3 day 3 level 2
+do 16 pushups 29
+rest 120 seconds 121
+do 21 pushups 35
+rest 120 seconds 109
+do 15 pushups 21
+rest 120 seconds 148
+do 15 pushups 30
+rest 120 seconds 61
+do at least 21 pushups 48
+? seconds
+88 / 88 pushups +9
+Note: 30 in last set, pretty easy day
+
+Sun Nov 22 11:44:59 CST 2015
+week 4 day 1 level 2
+do 18 pushups 32
+rest 60 seconds 66
+do 22 pushups 38
+rest 60 seconds 69
+do 16 pushups 24
+rest 60 seconds 62
+do 16 pushups 30
+rest 60 seconds 64
+do at least 25 pushups 78
+Total
+463 seconds
+97 / 97 pushups
+Note: last 25 were hard, took 3 or 4 mini-breaks
+
+situps exhaustion test
+Sun Nov 22 12:08:26 CST 2015
+40 situps
+
+Thu Dec 03 2015 13:13:42 GMT+0800 (China Standard Time)
+week 4 day 2 level 2
+do 20 pushups 27
+rest 90 seconds 91
+do 25 pushups 31
+rest 90 seconds 112
+do 20 pushups 26
+rest 90 seconds 90
+do 20 pushups 32
+rest 90 seconds 327
+do at least 28 pushups 50
+Total
+786 seconds
+113 / 113 pushups
+Note: last 28 were hard, even waiting 5 minutes instead of 1.5 minutes
+
+Mon Dec 14 2015 14:22:45 GMT+0100 (Central Europe Standard Time)
+week 4 day 3 level 2
+do 23 pushups 37
+rest 120 seconds 146
+do 28 pushups 45
+rest 120 seconds 136
+do 23 pushups 36
+rest 120 seconds 259
+do 23 pushups 34
+rest 120 seconds 234
+do at least 33 pushups 73
+Total
+1000 seconds
+130 / 130 pushups
+Note: was distracted so last pauses were twice normal; still had a hard time with last set. (Ha, 1000 seconds? kinda long)
+
+Mon Apr 11 2016 11:41:40 GMT+0800 (Taipei)
+week 4 day 2 level 2
+do 20 pushups 37
+rest 90 seconds 91
+do 25 pushups 45
+rest 90 seconds 121
+do 20 pushups 40
+rest 90 seconds 230
+do 20 pushups 47
+rest 90 seconds 866
+do at least 28 pushups 2
+Total
+1479 seconds
+113 / 113 pushups
+Note: started getting tired soon, big breaks to finish max 29. Need to make reminder bell reminder interval geometric or exponential
+
+Wed Jun 01 2016 10:58:32 GMT+0800 (China Standard Time)
+week 3 day 1 level 2
+do 12 pushups 27
+rest 60 seconds 62
+do 17 pushups 35
+rest 60 seconds 71
+do 13 pushups 30
+rest 60 seconds 62
+do 13 pushups 30
+rest 60 seconds 61
+do at least 17 pushups 64
+Total
+442 seconds
+72 / 72 pushups
+Note: First time in a while, struggled to finish last set... Looks like I restarted at about the right week and level.
+
+Tue Jul 26 2016 14:20:38 GMT+0200 (Paris, Madrid (heure d’été))
+week 3 day 2 level 2
+do 14 pushups 25
+rest 90 seconds 111
+do 19 pushups 29
+rest 90 seconds 105
+do 14 pushups 22
+rest 90 seconds 97
+do 14 pushups 22
+rest 90 seconds 161
+do at least 19 pushups 39
+611 seconds
+85 / 80 pushups
+Note: did max 24. Pretty easy, did it while remotely attending a keyholder meeting, nice way to relieve tension.
+
+Fri Aug 12 2016 13:22:57 GMT+0200 (CEST)
+week 3 day 2 level 2
+do 14 pushups 26
+rest 90 seconds 144
+do 19 pushups 27
+rest 90 seconds 95
+do 14 pushups 26
+rest 90 seconds 94
+do 14 pushups 26
+rest 90 seconds 90
+do at least 19 pushups 35
+563 seconds
+80 / 80 pushups
+Note: max 20. Pretty easy
+
+Wed Jul 19 2017 08:49:08 GMT+0800 (China Standard Time)
+week 3 day 1 level 2
+do 12 pushups 28
+rest 60 seconds 71
+do 17 pushups 34
+rest 60 seconds 70
+do 13 pushups 35
+rest 60 seconds 75
+do 13 pushups 52
+rest 60 seconds 71
+do at least 17 pushups 169
+Note: started getting hard by set 2, 3 breaks for max 18
+
+Sun Jul 23 2017 15:28:41 GMT+0800 (China Standard Time)
+week 3 day 2 level 2
+do 14 pushups 28
+rest 90 seconds 126
+do 19 pushups 2
+rest 90 seconds 93
+do 14 pushups 32
+rest 90 seconds 121
+do 14 pushups 19
+rest 90 seconds 105
+do at least 19 pushups 182
+708 seconds
+80 / 80 pushups
+Note: could only do them one or 2 at a time in second half of last set
+
+Fri Jul 28 2017 15:59:12 GMT+0800 (China Standard Time)
+week 3 day 3 level 2
+do 16 pushups 30
+rest 120 seconds 140
+do 21 pushups 36
+rest 120 seconds 127
+do 15 pushups 36
+rest 120 seconds 127
+do 15 pushups 41
+rest 120 seconds 305
+do at least 21 pushups 185
+1027 seconds
+88 / 88 pushups
+Note: needed much estra time to finish last set
+
+Mon Jul 31 2017 18:32:25 GMT+0800 (China Standard Time)
+week 4 day 1 level 2
+do 18 pushups 45
+rest 60 seconds 194
+do 22 pushups 39
+rest 60 seconds 312
+do 16 pushups 4181
+rest 60 seconds 214
+do 16 pushups 28
+rest 60 seconds 115
+do at least 25 pushups 94
+Total
+5222 seconds
+97 / 97 pushups
+Interrupted by distraction, long FT call, and couldn't even do the max 25 without breaks. Will try doing again in a few days.
+
+Thu Aug 03 2017 18:54:21 GMT+0800 (China Standard Time)
+week 4 day 1 level 2
+do 18 pushups 27
+rest 60 seconds 63
+do 22 pushups 40
+rest 60 seconds 63
+do 16 pushups 48
+rest 60 seconds 66
+do 16 pushups 168
+rest 60 seconds 64
+do at least 25 pushups 231
+Total
+770 seconds
+97 / 97 pushups
+(Repeat of same sequence) Crashed in next to last, last one was 4,4,3,4,3,4 with an average of 10 breaths between each. 
+
+Sun Aug 06 2017 17:00:26 GMT+0800 (China Standard Time)
+week 3 day 1 level 2
+do 12 pushups 25
+rest 60 seconds 63
+do 17 pushups 30
+rest 60 seconds 60
+do 13 pushups 27
+rest 60 seconds 60
+do 13 pushups 40
+rest 60 seconds 65
+do at least 17 pushups 143
+Total
+513 seconds
+72 / 72 pushups
+restarted program, still could not do last set properly, strange! At least took less than 10 min...
+
+Thu Aug 31 2017 16:25:22 GMT+0800 (China Standard Time)
+week 3 day 1 level 2
+do 12 pushups 23
+rest 60 seconds 60
+do 17 pushups 38
+rest 60 seconds 60
+do 13 pushups 38
+rest 60 seconds 93
+do 13 pushups 83
+rest 60 seconds 94
+do at least 17 pushups 167
+Total
+656 seconds
+72 / 72 pushups
+restarted program, still could not do last two sets properly... 11 min...
+
+Sat Oct 14 2017 13:21:05 GMT+0800 (China Standard Time)
+week 2 day 1 level 2
+do 9 pushups 27
+rest 60 seconds 62
+do 11 pushups 31
+rest 60 seconds 62
+do 8 pushups 26
+rest 60 seconds 65
+do 8 pushups 27
+rest 60 seconds 61
+do at least 11 pushups 42
+Total
+403 seconds
+47 / 47 pushups
+restarted program at week 2! still barely finished without pauses...
+
+Wed Oct 25
+week 2 day 2 level 2
+55 / 53 pushups
+max 13 = +2 not too hard, but last set not so easy
+
+Sun Oct 29 2017 12:32:24 GMT+0800 (China Standard Time)
+week 2 day 3 level 2
+do 12 pushups 23
+rest 120 seconds 138
+do 13 pushups 24
+rest 120 seconds 121
+do 10 pushups 18
+rest 120 seconds 124
+do 10 pushups 19
+rest 120 seconds 125
+do at least 15 pushups 34
+Total
+626 seconds
+65 / 60 pushups
+max 20 = +5 pretty easy, could have squeezed a few more in the last set
+
+Sat Nov 04 2017 13:58:34 GMT+0800 (China Standard Time)
+week 3 day 1 level 2
+do 12 pushups 26
+rest 60 seconds 85
+do 17 pushups 39
+rest 60 seconds 65
+do 13 pushups 28
+rest 60 seconds 67
+do 13 pushups 36
+rest 60 seconds 443
+do at least 17 pushups 3
+Total
+792 seconds
+72 / 72 pushups
+max 20 = +3 but needed 7-minute break befopre the last set. OK I have a bad cold...
+
+Mon Nov 06 2017 16:49:25 GMT+0800 (China Standard Time)
+week 3 day 2 level 2
+do 14 pushups 28
+rest 90 seconds 149
+do 19 pushups 32
+rest 90 seconds 115
+do 14 pushups 29
+rest 90 seconds 91
+do 14 pushups 33
+rest 90 seconds 101
+do at least 19 pushups 54
+Total
+632 seconds
+80 / 80 pushups
+max 19 = +0 barely made it. Still big cold
+
+Thu Nov 09 2017 13:37:23 GMT+0800 (China Standard Time)
+week 3 day 3 level 2
+do 16 pushups 28
+rest 120 seconds 190
+do 21 pushups 32
+rest 120 seconds 35
+do 15 pushups 159
+rest 120 seconds 3
+do 15 pushups 23
+rest 120 seconds 577
+do at least 21 pushups 1
+Total
+1048 seconds
+88 / 88 pushups
+max 26 = +5 but took longer rest periods due to distraction
+
+Tue Nov 14 2017 17:55:16 GMT+0800 (China Standard Time)
+week 4 day 1 level 2
+do 18 pushups 30
+rest 60 seconds 85
+do 22 pushups 33
+rest 60 seconds 75
+do 16 pushups 38
+rest 60 seconds 173
+do 16 pushups 35
+rest 60 seconds 87
+do at least 25 pushups 406
+Total
+962 seconds
+97 / 97 pushups
+max 40 = +15 but look at the rest periods and I took two breaks during the max set
+
+Sun Nov 19 2017 08:31:18 GMT+0800 (China Standard Time)
+week 4 day 2 level 2
+do 20 pushups 32
+rest 90 seconds 93
+do 25 pushups 43
+rest 90 seconds 103
+do 20 pushups 77
+rest 90 seconds 147
+do 20 pushups 124
+rest 90 seconds 155
+do at least 28 pushups 308
+Total
+1082 seconds
+113 / 113 pushups
+max 33 = +5 had to take 2 or 3 long breaks in last 2 sets
+
+Sun Dec 03 2017 13:30:41 GMT+0800 (China Standard Time)
+week 4 day 1 level 2
+do 18 pushups 28
+rest 60 seconds 144
+do 22 pushups 28
+rest 60 seconds 268
+do 16 pushups 23
+rest 60 seconds 67
+do 16 pushups 30
+rest 60 seconds 71
+do at least 25 pushups 155
+Total
+814 seconds
+99 / 97 pushups
+max 27 +2 needed 2 breaks in the last set, took too long at first because was busy cooking
+
+
+Fri Jul 06 2018 20:21:33 GMT+0200 (Central European Summer Time)
+week 3 day 1 level 2
+do 12 pushups 34
+rest 60 seconds 63
+do 17 pushups 34
+rest 60 seconds 58
+do 13 pushups 33
+rest 60 seconds 59
+do 13 pushups 44
+rest 60 seconds 119
+do at least 17 pushups 135
+Total
+579 seconds
+72 / 72 pushups
+max 17 had trouble in the two sets, especially the last one
+
+
+Thu Aug 16 2018 16:10:48 GMT+0200 (Central European Summer Time)
+week 2 day 1 level 2
+do 9 pushups 22
+rest 60 seconds 0
+do 11 pushups 72
+rest 60 seconds 64
+do 8 pushups 18
+rest 60 seconds 57
+do 8 pushups 16
+rest 60 seconds 49
+do at least 11 pushups 31
+Total
+329 seconds
+47 / 47 pushups
+max 15. Restart slooow. At least I could do this.
+
+Mon Aug 20 2018 20:42:23 GMT+0200 (Central European Summer Time)
+week 2 day 2 level 2
+do 10 pushups 26
+rest 90 seconds 128
+do 12 pushups 25
+rest 90 seconds 83
+do 9 pushups 25
+rest 90 seconds 98
+do 9 pushups 24
+rest 90 seconds 118
+do at least 13 pushups 39
+Total
+566 seconds
+53 / 53 pushups
+max 20. Pretty easy, got a bit distracted while doing it so some of the breaks were a bit longer
+
+Wed Aug 29 2018 05:50:40 GMT+0200 (Central European Summer Time)
+week 2 day 3 level 2
+do 12 pushups 22
+rest 120 seconds 135
+do 13 pushups 25
+rest 120 seconds 126
+do 10 pushups 19
+rest 120 seconds 124
+do 10 pushups 23
+rest 120 seconds 128
+do at least 15 pushups 46
+Total
+648 seconds
+60 / 60 pushups
+max: 25. Not too hard. Guess could do better form but I wanted to get it over with.
+
+Thu Aug 30 2018 18:05:13 GMT+0200 (Central European Summer Time)
+week 3 day 1 level 2
+do 12 pushups 28
+rest 60 seconds 63
+do 17 pushups 1608
+rest 60 seconds 90
+do 13 pushups 24
+rest 60 seconds 91
+do 13 pushups 26
+rest 60 seconds 114
+do at least 17 pushups 42
+Total
+2086 seconds
+72 / 72 pushups
+max: 20. oops I should have waited another day, not too hard, but was interrupted by call.
+
+Sun Sep 02 2018 08:59:15 GMT+0200 (Central European Summer Time)
+week 3 day 2 level 2
+do 14 pushups 32
+rest 90 seconds 89
+do 19 pushups 57
+rest 90 seconds 107
+do 14 pushups 46
+rest 90 seconds 157
+do 14 pushups 29
+rest 90 seconds 92
+do at least 19 pushups 124
+Total
+733 seconds
+80 / 80 pushups
+max 21. pretty ok, took a bit longer due to distraction. tried Wim Hof style breathing
+
+Wed Sep 05 2018 08:40:57 GMT+0200 (Central European Summer Time)
+week 3 day 3 level 2
+do 16 pushups 31
+rest 120 seconds 170
+do 21 pushups 34
+rest 120 seconds 127
+do 15 pushups 31
+rest 120 seconds 143
+do 15 pushups 30
+rest 120 seconds 140
+do at least 21 pushups 50
+Total
+756 seconds
+88 / 88 pushups
+max 21, last set quite hard
+
+Sun Sep 09 2018 16:00:05 GMT+0200 (Central European Summer Time)
+week 4 day 1 level 2
+do 18 pushups 31
+rest 60 seconds 60
+do 22 pushups 37
+rest 60 seconds 73
+do 16 pushups 33
+rest 60 seconds 90
+do 16 pushups 52
+rest 60 seconds 435
+do at least 25 pushups 54
+Total
+865 seconds
+97 / 97 pushups
+max 30 after a long 7-minute rest doing the dishes, this was a hard set
+
+Fri Sep 14 2018 14:15:19 GMT+0200 (Central European Summer Time)
+week 4 day 2 level 2
+do 20 pushups 30
+rest 90 seconds 97
+do 25 pushups 39
+rest 90 seconds 99
+do 20 pushups 96
+rest 90 seconds 127
+do 20 pushups 79
+rest 90 seconds 151
+do at least 28 pushups 221
+Total
+939 seconds
+113 / 113 pushups
+mas 34 but split in two sessions, I started dying in the next to last session. Redo!
+
+Tue Sep 18 2018 11:54:07 GMT+0200 (Central European Summer Time)
+week 4 day 2 level 2
+do 20 pushups 34
+rest 90 seconds 96
+do 25 pushups 40
+rest 90 seconds 124
+do 20 pushups 38
+rest 90 seconds 106
+do 20 pushups 69
+rest 90 seconds 275
+do at least 28 pushups 57
+Total
+839 seconds
+113 / 113 pushups
+max 28: still split, but a bit faster than last time... maybe move on and do week over if 3d day is also bad?
+
+Thu Sep 20 2018 08:15:31 GMT+0200 (Central European Summer Time) - 1.565 hours ago
+week 4 day 3 level 2
+do 23 pushups
+rest 120 seconds
+do 28 pushups
+rest 120 seconds
+do 23 pushups
+rest 120 seconds
+do 23 pushups
+rest 120 seconds
+do at least 33 pushups
+Total
+0 seconds
+0 / 130 pushups
+max 33, not bad, but took longer breaks. No time info because forgot to copy/paste... 
+
+Tue Nov 20 2018 08:34:16 GMT+0100 (Central European Standard Time)
+week 2 day 1 level 2
+do 9 pushups 20
+rest 60 seconds 151
+do 11 pushups 21
+rest 60 seconds 77
+do 8 pushups 19
+rest 60 seconds 70
+do 8 pushups 20
+rest 60 seconds 62
+do at least 11 pushups 62
+Total
+502 seconds
+47 / 47 pushups
+max 20, easy, restarted program yet again
+
+Sun Nov 25 2018 12:21:31 GMT+0100 (Central European Standard Time)
+week 2 day 2 level 2
+do 10 pushups 30
+rest 90 seconds 135
+do 12 pushups 22
+rest 90 seconds 119
+do 9 pushups 28
+rest 90 seconds 65
+do 9 pushups 19
+rest 90 seconds 83
+do at least 13 pushups 45
+Total
+546 seconds
+53 / 53 pushups
+max +7: easy, but last one was a bit hard
+
+Wed Nov 28 2018 06:49:39 GMT+0100 (Central European Standard Time)
+week 2 day 3 level 2
+do 12 pushups 29
+rest 120 seconds 104
+do 13 pushups 28
+rest 120 seconds 135
+do 10 pushups 25
+rest 120 seconds 116
+do 10 pushups 32
+rest 120 seconds 149
+do at least 15 pushups 57
+Total
+675 seconds
+60 / 60 pushups
+max: +10 not too hard
+
+Wed Dec 05 2018 10:48:53 GMT+0100 (Central European Standard Time)
+week 3 day 1 level 2
+do 12 pushups 29
+rest 60 seconds 62
+do 17 pushups 37
+rest 60 seconds 91
+do 13 pushups 26
+rest 60 seconds 112
+do 13 pushups 26
+rest 60 seconds 79
+do at least 17 pushups 50
+Total
+512 seconds
+72 / 72 pushups
+max: +1 not too hard but last set tough. I'm pretty tired today tho
+
+Wed Dec 12 2018 10:46:36 GMT+0100 (Central European Standard Time)
+week 3 day 1 level 2
+do 12 pushups 32
+rest 60 seconds 71
+do 17 pushups 30
+rest 60 seconds 64
+do 13 pushups 26
+rest 60 seconds 63
+do 13 pushups 26
+rest 60 seconds 69
+do at least 17 pushups 77
+Total
+458 seconds
+72 / 72 pushups
+max +0: last set tough but doable
+
+Sun Dec 16 2018 11:43:16 GMT+0100 (Central European Standard Time)
+week 3 day 2 level 2
+do 14 pushups 28
+rest 90 seconds 95
+do 19 pushups 32
+rest 90 seconds 93
+do 14 pushups 25
+rest 90 seconds 94
+do 14 pushups 43
+rest 90 seconds 93
+do at least 19 pushups 65
+Total
+568 seconds
+80 / 80 pushups
+max: +1 needed a small break to finish last set
+
+Wed Dec 19 2018 07:59:22 GMT+0100 (Central European Standard Time)
+week 3 day 3 level 2
+do 16 pushups 29
+rest 120 seconds 74
+do 21 pushups 35
+rest 120 seconds 118
+do 15 pushups 24
+rest 120 seconds 134
+do 15 pushups 27
+rest 120 seconds 126
+do at least 21 pushups 52
+Total
+619 seconds
+88 / 88 pushups
+max: +4 not too hard, was even a bit accelerated as I rushed to get out
+
+Fri Dec 21 2018 07:06:22 GMT+0100 (Central European Standard Time)
+week 4 day 1 level 2
+do 18 pushups 35
+rest 60 seconds 63
+do 22 pushups 61
+rest 60 seconds 94
+do 16 pushups 78
+rest 60 seconds 196
+do 16 pushups 32
+rest 60 seconds 462
+do at least 25 pushups 42
+Total
+1063 seconds
+97 / 97 pushups
+max: +1 loooong breaks, should do this again
+
+Thu Dec 27 2018 12:06:46 GMT+0100 (Central European Standard Time)
+week 4 day 1 level 2
+do 18 pushups 37
+rest 60 seconds 63
+do 22 pushups 42
+rest 60 seconds 59
+do 16 pushups 37
+rest 60 seconds 67
+do 16 pushups 92
+rest 60 seconds 67
+do at least 25 pushups 505
+Total
+969 seconds
+97 / 97 pushups
+max: +5 but waited 8 min before the last 25...
+
+Thu Jan 03 2019 07:27:02 GMT+0100 (Central European Standard Time)
+week 4 day 1 level 2
+do 18 pushups 28
+rest 60 seconds 97
+do 22 pushups 32
+rest 60 seconds 76
+do 16 pushups 28
+rest 60 seconds 104
+do 16 pushups 30
+rest 60 seconds 153
+do at least 25 pushups 69
+Total
+617 seconds
+97 / 97 pushups
+max +0 last one needed a couple mini breaks, also was busy and took longer rests
+
+Tue Jan 08 2019 21:03:44 GMT+0100 (Central European Standard Time)
+week 4 day 2 level 2
+do 20 pushups 35
+rest 90 seconds 92
+do 25 pushups 42
+rest 90 seconds 93
+do 20 pushups 52
+rest 90 seconds 95
+do 20 pushups 122
+rest 90 seconds 210
+do at least 28 pushups 76
+Total
+817 seconds
+113 / 113 pushups
+max +0: had a hard time in last sets, took longer breaks
+
+Thu Jan 17 2019 09:30:32 GMT+0100 (Central European Standard Time)
+week 4 day 2 level 2
+do 20 pushups 29
+rest 90 seconds 104
+do 25 pushups 34
+rest 90 seconds 167
+do 20 pushups 28
+rest 90 seconds 185
+do 20 pushups 31
+rest 90 seconds 118
+do at least 28 pushups 685
+Total
+1381 seconds
+113 / 113 pushups
+Last workout: week 4 day 2 level 2, Tue Jan 08, 8 days, 13 hours ago
+max: +16 but 10 minutes after doing the first 14 of the last set
+
+Fri Feb 01 2019 07:15:31 GMT+0100 (Central European Standard Time)
+week 4 day 1 level 2
+do 18 pushups 36
+rest 60 seconds 81
+do 22 pushups 35
+rest 60 seconds 65
+do 16 pushups 44
+rest 60 seconds 65
+do 16 pushups 62
+rest 60 seconds 121
+do at least 25 pushups 295
+Total
+804 seconds
+97 / 97 pushups
+max: -15 didnt finish last set
+
+Wed Feb 06 2019 09:17:04 GMT+0100 (Central European Standard Time)
+week 4 day 1 level 2
+do 18 pushups 36
+rest 60 seconds 79
+do 22 pushups 39
+rest 60 seconds 63
+do 16 pushups 40
+rest 60 seconds 65
+do 16 pushups 95
+rest 60 seconds 131
+do at least 25 pushups 235
+Total
+783 seconds
+97 / 97 pushups
+max: +5 but long breaks in last set, a few longer rests between sets
+
+Wed Feb 20 2019 07:49:04 GMT+0100 (Central European Standard Time)
+week 4 day 1 level 2
+do 18 pushups 32
+rest 60 seconds 68
+do 22 pushups 37
+rest 60 seconds 70
+do 16 pushups 32
+rest 60 seconds 87
+do 16 pushups 40
+rest 60 seconds 69
+do at least 25 pushups 149
+Total
+584 seconds
+97 / 97 pushups
+max: +0 needed two breaks to finish last set
+Last workout: week 4 day 1 level 2, Wed Feb 06, 13 days, 22 hours ago
+
+Tue Mar 05 2019 14:26:07 GMT+0100 (Central European Standard Time)
+week 3 day 1 level 2
+do 12 pushups 19
+rest 60 seconds 67
+do 17 pushups 23
+rest 60 seconds 70
+do 13 pushups 27
+rest 60 seconds 124
+do 13 pushups 19
+rest 60 seconds 63
+do at least 17 pushups 36
+Total
+448 seconds
+72 / 72 pushups
+Last workout: week 3 day 1 level 2, Wed Feb 20, 13 days, 7 hours ago
+max 30: not too hard
+
+Sat Mar 09 2019 08:38:21 GMT+0100 (Central European Standard Time)
+week 3 day 2 level 2
+do 14 pushups 28
+rest 90 seconds 95
+do 19 pushups 59
+rest 90 seconds 102
+do 14 pushups 14
+rest 90 seconds 18
+do 14 pushups 466
+rest 90 seconds 9
+do at least 19 pushups 3
+Total
+794 seconds
+80 / 80 pushups
+Last workout: week 3 day 2 level 2, Tue Mar 05, 3 days, 18 hours ago
+max 28 not bad. I did it in prescribed time, but PC crashed, so the above is fake session for the record
+
+Mon Mar 11 2019 05:40:09 GMT+0100 (Central European Standard Time)
+week 3 day 3 level 2
+do 16 pushups 32
+rest 120 seconds 126
+do 21 pushups 34
+rest 120 seconds 138
+do 15 pushups 24
+rest 120 seconds 131
+do 15 pushups 30
+rest 120 seconds 137
+do at least 21 pushups 48
+Total
+700 seconds
+88 / 88 pushups
+Last workout: week 3 day 3 level 2, Sat Mar 09, 1 days, 21 hours ago
+max 25: pretty easy except last one, but I'm still a bit sick and it was less than 2 days since last workout so... not bad. Im in week 3 shape, onto 4!
