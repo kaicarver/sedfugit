@@ -310,7 +310,9 @@
       speak(speaktext);
     }
 
-    function totalTime() {
+	function totalTime() {
+	  //return; there is a bug here the first time run on a browser...
+	  // also a problem with LocalStorage rights as a file:// on Brave
       var curTotalTime = 0;
       var curTotalExercises = 0;
       var totalExercises = 0;
@@ -374,6 +376,7 @@ BUG: last workout: ... 6 days 24 hours ago (because rounded up from 23:45 hours
 
 BUG: last workout label incorrect when switching weeks?
 
+TODO: automatically show how I did based on the time for each set and for the effective break time. One pushup takes about 2 seconds when all is fine
 TODO: save state at all time so robust to sudden failure
 TODO: display elapsed times in hours, minutes and seconds, not just seconds
 TODO: visualize time taken for breaks, how much beyond
