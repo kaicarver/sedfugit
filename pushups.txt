@@ -906,3 +906,54 @@ Total
 Last workout: week 4 day 2 level 2, Thu Mar 14, 4 days, 1 hours ago
 max 30 but had to break it into 2 sets spread over 2 minutes apart
 
+Mon Mar 25 2019 08:13:54 GMT+0100 (Central European Standard Time)
+week 4 day 3 level 2
+do 23 pushups 35
+rest 120 seconds 126
+do 28 pushups 47
+rest 120 seconds 157
+do 23 pushups 42
+rest 120 seconds 124
+do 23 pushups 83
+rest 120 seconds 309
+do at least 33 pushups 62
+Total
+985 seconds
+130 / 130 pushups
+Last workout: week 4 day 3 level 2, Mon Mar 18, 6 days, 21 hours ago
+max 33 but had to take two breaks in next-to-last set and extra-long rest plus one break in last set
+
+Thu Mar 28 2019 07:21:02 GMT+0100 (Central European Standard Time)
+week 5 day 1 level 2
+do 28 pushups 43
+rest 60 seconds 65
+do 35 pushups 76
+rest 60 seconds 60
+do 25 pushups 86
+rest 60 seconds
+do 22 pushups
+rest 60 seconds
+do at least 35 pushups
+Total
+330 seconds
+63 / 145 pushups
+Last workout: week 4 day 3 level 2, Mon Mar 25, 2 days, 23 hours ago
+FAIL at 3d set (do 25 pushups) only did 15 
+
+Thu Apr 04 2019 09:48:27 GMT+0200 (Central European Summer Time)
+week 4 day 1 level 2
+do 18 pushups 28
+rest 60 seconds 73
+do 22 pushups 33
+rest 60 seconds 63
+do 16 pushups 33
+rest 60 seconds 91
+do 16 pushups 28
+rest 60 seconds 64
+do at least 25 pushups 76
+Total
+489 seconds
+97 / 97 pushups
+Last workout: week 4 day 1 level 2, Mon Mar 25, 10 days, 0 hours ago
+max 28 we're back in business at week 4 last set a little hard otherwise gooood
+
