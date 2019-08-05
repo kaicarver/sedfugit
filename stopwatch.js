@@ -20,11 +20,15 @@ var Stopwatch = function(elem, options) {
   var push_re = /(\d+) pushup/;
   function update() { clock += delta(); updateDisplay(); }
   function updateDisplay() { timer.innerHTML = render(); }
-  function render() { var maxrest = elem.innerText.match(rest_re); var overdue = maxrest && maxrest[1] <= time();
+  function render() { var maxrest = elem.innerText.match(rest_re);
+		      var overdue = maxrest && maxrest[1] <= time();
 		      if (overdue) {
 			var overdueTime = time() - maxrest[1];
 			if (overdueTime % reminderInterval == 0 && overdueTime < maxReminders * reminderInterval) {
 			  reminderBell.play();
+			  //speak("Time to go on to the next set!");
+			  // there us a bug here that this gets called multible times for same time
+			  console.log("reminder...", overdueTime);
 			}
 		      }
 		      return (overdue ? '<span style="color: red">' : "<span>") +  time() + "</span>"; }
