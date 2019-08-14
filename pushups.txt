@@ -1024,7 +1024,7 @@ do at least 17 pushups 100
 Total
 485 seconds
 72 / 72 pushups
-Last workout: <span id="lastWorkoutDate"><a href="http://www.hundredpushups.com/week3.html" target="_blank">week 3</a> day 1 level 2, <span title="Thu May 23 2019 07:23:13 GMT+0200">Thu May 23</span>, 62 days, 10 hours ago</span>
+Last workout: week 3 day 1 level 2, Thu May 23, 62 days, 10 hours ago
 
 Mon Aug 05 2019 09:24:34 GMT+0200 (Central European Summer Time)
 week 3 day 1 level 2
@@ -1042,3 +1042,55 @@ Total
 72 / 72 pushups
 Last workout: week 3 day 1 level 2, Wed Jul 24, 11 days, 16 hours ago
 max 17 needed 2 or 3 breaks for last 5, but tough workout day before run from CDG
+
+Wed Aug 07 2019 17:50:35 GMT+0200 (Central European Summer Time)
+week 3 day 2 level 2
+do 14 pushups 18
+rest 90 seconds 83
+do 19 pushups 40
+rest 90 seconds 101
+do 14 pushups 27
+rest 90 seconds 94
+do 14 pushups 30
+rest 90 seconds 91
+do at least 19 pushups 62
+Total
+546 seconds
+80 / 80 pushups
+Last workout: week 3 day 2 level 2, Mon Aug 05, 2 days, 8 hours ago
+max 19 needed one break for the last 5
+
+Sun Aug 11 2019 08:19:56 GMT+0200 (Central European Summer Time)
+week 3 day 3 level 2
+do 16 pushups 33
+rest 120 seconds 125
+do 21 pushups 36
+rest 120 seconds 129
+do 15 pushups 31
+rest 120 seconds 130
+do 15 pushups 32
+rest 120 seconds 130
+do at least 21 pushups 51
+Total
+697 seconds
+88 / 88 pushups
+Last workout: week 3 day 3 level 2, Wed Aug 07, 3 days, 15 hours ago
+max 21 no extra but at least all in one go (barely)
+
+Wed Aug 14 2019 08:25:26 GMT+0200 (Central European Summer Time)
+week 4 day 1 level 2
+do 18 pushups 34
+rest 60 seconds 60
+do 22 pushups 48
+rest 60 seconds 67
+do 16 pushups 46
+rest 60 seconds 81
+do 16 pushups 110
+rest 60 seconds 66
+do at least 25 pushups 257
+Total
+769 seconds
+97 / 97 pushups
+Last workout: week 4 day 1 level 2, Sun Aug 11, 3 days, 0 hours ago
+max 26 very hard, last few sets needed break, last set in 5 sets of 5...
+
