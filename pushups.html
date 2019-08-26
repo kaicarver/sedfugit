@@ -114,19 +114,30 @@
     window.onload = function () {
       //speak('Hello Kai! You need to go outside!');
       var myCurSetSetIndex;
-      if (typeof (localStorage.myCurSetSetIndex) !== "undefined") {
-        myCurSetSetIndex = Number(localStorage.myCurSetSetIndex);
-      } else {
-        myCurSetSetIndex = 0;
-        localStorage.myCurSetSetIndex = curSetSetIndex;
+      try {
+        if (typeof (localStorage.myCurSetSetIndex) !== "undefined") {
+          myCurSetSetIndex = Number(localStorage.myCurSetSetIndex);
+        } else {
+          myCurSetSetIndex = 0;
+          localStorage.myCurSetSetIndex = curSetSetIndex;
+        }
+        if (typeof (localStorage.lastWorkoutDate) !== "undefined") {
+          lastWorkoutDate = (new Date(Date.parse(localStorage.lastWorkoutDate))).toString().slice(0, 33);
+        } else {
+          lastWorkoutDate = 'never';
+        }
+        displaySetSet('pushups', myCurSetSetIndex);
+        //displaySetSet('situps', myCurSetSetIndex);
+
+        setInterval(totalTime, 100);
+        setInterval(stepTime, 100);
+      } catch (e) {
+        if (e instanceof DOMException) {
+          alert("This browser does not allow local storage. Try from a server?\n" + e);
+        } else {
+          alert("Exception!\n" + e);
+        }
       }
-      if (typeof (localStorage.lastWorkoutDate) !== "undefined") {
-        lastWorkoutDate = (new Date(Date.parse(localStorage.lastWorkoutDate))).toString().slice(0, 33);
-      } else {
-        lastWorkoutDate = 'never';
-      }
-      displaySetSet('pushups', myCurSetSetIndex);
-      //displaySetSet('situps', myCurSetSetIndex);
     }
     var curExercise;
     var exerciseSet;
@@ -303,10 +314,16 @@
           localStorage.lastExercise = 'pushups';
           localStorage.lastSetSetIndex = curSetSetIndex;
           speaktext = todo.innerText;
-          speaktext += ' Congratulations, you did at least ' + document.getElementById("totalExercises").innerText + ' ' + curExercise +
-            ' in ' + document.getElementById("curTotalTime").innerText + ' seconds.'
+          let numExercises = document.getElementById("totalExercises").innerText;
+          let numSeconds = document.getElementById("curTotalTime").innerText;
+          let numSecondsPerExercise = Math.round((numSeconds / numExercises) * 10) / 10;
+          speaktext += ' Congratulations, you did at least ' + numExercises + ' ' + curExercise +
+            ' in ' + numSeconds + ' seconds. ';
+          speaktext += 'That\'s ' + numSecondsPerExercise + ' ' + curExercise + ' per second.';
         }
       }
+      // needs more info to say an intelligent sentence, like:
+      // "In this set, you took 3 seconds per pushup. Rest 60 seconds now."
       speak(speaktext);
     }
 
@@ -358,8 +375,6 @@
       }
       document.getElementById("stepTime").innerHTML = stepTime;
     }
-    setInterval(totalTime, 100);
-    setInterval(stepTime, 100);
 
     function speak(text) {
       if ('speechSynthesis' in window) {
