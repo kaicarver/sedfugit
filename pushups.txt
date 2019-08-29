@@ -970,7 +970,7 @@ rest 60 seconds 83
 do at least 17 pushups 37
 Total
 446 seconds
-72 / 72 pushups
+72 / 72 pushups 6.19/sec
 Last workout: week 3 day 1 level 2, Mon Apr 29, 14 days, 9 hours ago
 max 20 not bad, not great
 
@@ -989,7 +989,7 @@ rest 90 seconds 108
 do at least 19 pushups 45
 Total
 525 seconds
-80 / 80 pushups
+80 / 80 pushups 5.76/sec
 max 30, not bad at all
 Last workout: week 3 day 2 level 2, Fri May 17, 3 days, 13 hours ago
 
@@ -1006,7 +1006,7 @@ rest 120 seconds 126
 do at least 21 pushups 47
 Total
 669 seconds
-88 / 88 pushups
+88 / 88 pushups 7.60/sec
 Last workout: week 3 day 3 level 2, Tue May 21, 1 days, 23 hours ago
 max 25 ok but I wanted to hit 33... still quite good
 
@@ -1023,7 +1023,7 @@ rest 60 seconds 60
 do at least 17 pushups 100
 Total
 485 seconds
-72 / 72 pushups
+72 / 72 pushups 6.73/sec
 Last workout: week 3 day 1 level 2, Thu May 23, 62 days, 10 hours ago
 
 Mon Aug 05 2019 09:24:34 GMT+0200 (Central European Summer Time)
@@ -1039,7 +1039,7 @@ rest 60 seconds 69
 do at least 17 pushups 62
 Total
 486 seconds
-72 / 72 pushups
+72 / 72 pushups 6.75/sec
 Last workout: week 3 day 1 level 2, Wed Jul 24, 11 days, 16 hours ago
 max 17 needed 2 or 3 breaks for last 5, but tough workout day before run from CDG
 
@@ -1056,7 +1056,7 @@ rest 90 seconds 91
 do at least 19 pushups 62
 Total
 546 seconds
-80 / 80 pushups
+80 / 80 pushups 6.82/sec
 Last workout: week 3 day 2 level 2, Mon Aug 05, 2 days, 8 hours ago
 max 19 needed one break for the last 5
 
@@ -1073,7 +1073,7 @@ rest 120 seconds 130
 do at least 21 pushups 51
 Total
 697 seconds
-88 / 88 pushups
+88 / 88 pushups 7.92/sec
 Last workout: week 3 day 3 level 2, Wed Aug 07, 3 days, 15 hours ago
 max 21 no extra but at least all in one go (barely)
 
@@ -1090,7 +1090,57 @@ rest 60 seconds 66
 do at least 25 pushups 257
 Total
 769 seconds
-97 / 97 pushups
+97 / 97 pushups 7.92/sec
 Last workout: week 4 day 1 level 2, Sun Aug 11, 3 days, 0 hours ago
 max 26 very hard, last few sets needed break, last set in 5 sets of 5...
+
+Thu Aug 22 2019 07:09:23 GMT+0200 (Central European Summer Time)
+week 4 day 1 level 2
+do 18 pushups 34
+rest 60 seconds 64
+do 22 pushups 38
+rest 60 seconds 66
+do 16 pushups 35
+rest 60 seconds 66
+do 16 pushups 53
+rest 60 seconds 73
+do at least 25 pushups 241
+Total
+670 seconds
+97 / 97 pushups 6.90/sec
+Last workout: week 4 day 1 level 2, Wed Aug 14, 7 days, 23 hours ago
+max 26 hard but not as hard as last one, last set in 5 sets of 5
+
+Mon Aug 26 2019 12:49:53 GMT+0200 (Central European Summer Time)
+week 4 day 2 level 2
+do 20 pushups 32
+rest 90 seconds 94
+do 25 pushups 45
+rest 90 seconds 91
+do 20 pushups 56
+rest 90 seconds 109
+do 20 pushups 83
+rest 90 seconds 93
+do at least 28 pushups 210
+Total
+813 seconds
+113 / 113 pushups 7.2/sec
+max 28 needed tons of breaks in last 3 sets, but day after 22k run
+
+Thu Aug 29 2019 08:08:06 GMT+0200 (Central European Summer Time)
+week 4 day 3 level 2
+do 23 pushups 42
+rest 120 seconds 124
+do 28 pushups 55
+rest 120 seconds 127
+do 23 pushups 97
+rest 120 seconds 280
+do 23 pushups 189
+rest 120 seconds 671
+do at least 33 pushups 71
+Total
+1656 seconds
+130 / 130 pushups 12.74/sec
+Last workout: week 4 day 3 level 2, Mon Aug 26, 2 days, 20 hours ago
+max 33 almost without breaks but after looong breaks in earlier sets
 
