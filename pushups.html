@@ -319,7 +319,7 @@
           let numSecondsPerExercise = Math.round((numSeconds / numExercises) * 10) / 10;
           speaktext += ' Congratulations, you did at least ' + numExercises + ' ' + curExercise +
             ' in ' + numSeconds + ' seconds. ';
-          speaktext += 'That\'s ' + numSecondsPerExercise + ' ' + curExercise + ' per second.';
+          speaktext += 'That\'s ' + numSecondsPerExercise + ' seconds per ' + curExercise + '.';
         }
       }
       // needs more info to say an intelligent sentence, like:
@@ -390,6 +390,10 @@
 BUG: last workout: ... 6 days 24 hours ago (because rounded up from 23:45 hours
 
 BUG: last workout label incorrect when switching weeks?
+
+BUG: beeping doesn't work on Brave
+
+TODO: 
 
 TODO: handle failed workouts (included in last workout? record it, anyway)
 TODO: automatically show how I did based on the time for each set and for the effective break time. One pushup takes about 2 seconds when all is fine

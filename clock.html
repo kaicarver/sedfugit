@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <style>
+      .clock { font-size: 4em; }
+    </style>
+  </head>
+  <body>
+    <div class="clock"></div>
+  </body>
+  <script>
+    function clock() {
+	var time = new Date(),
+	    hours = time.getHours(),
+	    minutes = time.getMinutes(),
+	    seconds = time.getSeconds();
+	document.querySelectorAll('.clock')[0].innerHTML =
+	    twodigit(hours) + ":" + twodigit(minutes) + ":" + twodigit(seconds);
+
+	function twodigit(num) {
+	    if (num < 10) {
+		num = '0' + num
+	    }
+	    return num;
+	}
+    }
+    setInterval(clock, 1000);
+  </script>
+</html>

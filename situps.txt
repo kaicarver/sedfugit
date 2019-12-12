@@ -13,7 +13,23 @@ rest 60 seconds 73
 do at least 14 situps 34
 Total
 439 seconds
-69 / 69 situps 6.36/sec
+69 / 69 situps 6.36 seconds/situp
 Last workout: long time ago
 max 15 easy but not as easy as I thought [note: even buggier with situps]
+
+Thu Sep 05 2019 08:51:34 GMT+0200 (Central European Summer Time)
+week 3 day 2 level 1
+do 15 situps 29
+rest 60 seconds 63
+do 18 situps 33
+rest 60 seconds 60
+do 12 situps 25
+rest 60 seconds 74
+do 12 situps 23
+rest 60 seconds 67
+do at least 18 situps 37
+Total
+411 seconds
+77 / 75 situps 5.34 seconds/situp
+Last workout: week 2 day 2 level 2, Thu Aug 29, 6 days, 23 hours ago
 
