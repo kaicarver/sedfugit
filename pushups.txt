@@ -1280,3 +1280,20 @@ Total
 80 / 80 pushups
 Last workout: week 3 day 2 level 2, Tue Nov 12, 8 days, 1 hours ago
 max 20 didn't feel too strong
+
+Tue Feb 04 2020 13:30:30 GMT+0100 (Central European Standard Time)
+week 2 day 1 level 2
+do 9 pushups 24
+rest 60 seconds 87
+do 11 pushups 22
+rest 60 seconds 58
+do 8 pushups 16
+rest 60 seconds 27
+do 8 pushups 16
+rest 60 seconds 44
+do at least 11 pushups 38
+Total
+332 seconds
+47 / 47 pushups 5.9 seconds/pushup (2.1 not counting rest)
+Last workout: week 2 day 1 level 2, Wed Nov 20, 75 days, 23 hours ago
+max 20 kinda rushed the rest time, but felt pretty strong

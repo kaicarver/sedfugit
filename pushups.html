@@ -319,7 +319,7 @@
           let numSecondsPerExercise = Math.round((numSeconds / numExercises) * 10) / 10;
           speaktext += ' Congratulations, you did at least ' + numExercises + ' ' + curExercise +
             ' in ' + numSeconds + ' seconds. ';
-          speaktext += 'That\'s ' + numSecondsPerExercise + ' seconds per ' + curExercise + '.';
+          speaktext += 'That\'s at most ' + numSecondsPerExercise + ' seconds per ' + curExercise + '.';
         }
       }
       // needs more info to say an intelligent sentence, like:
