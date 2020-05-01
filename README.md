@@ -12,3 +12,8 @@ old
 
 http://htmlpreview.github.io/?https://github.com/kaicarver/sedfugit/blob/master/index.html
 
+## Notes
+
+Interesting similar (but mostly less-functional) app looking very pretty and streamlined, using Svelte:
+
+https://pushu.ps/
